@@ -1,4 +1,5 @@
 import 'package:chat_group/widget/button_custom.dart';
+import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
 
 class Loginview extends StatelessWidget {
@@ -17,6 +18,18 @@ class Loginview extends StatelessWidget {
             Image.asset(
               "assets/logo.png",
               width: 200,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFormFieldCustom(
+              hintlabel: "Email",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFormFieldCustom(
+              hintlabel: "Password",
             ),
             const SizedBox(
               height: 20,
