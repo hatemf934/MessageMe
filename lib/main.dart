@@ -1,11 +1,11 @@
-import 'package:chat_group/view/chatview.dart';
-import 'package:chat_group/view/homeview.dart';
-import 'package:chat_group/view/loginview.dart';
-import 'package:chat_group/view/regesterview.dart';
+import 'package:chat_group/firebase_options.dart';
+import 'package:chat_group/view/chatview/views/chatview.dart';
+import 'package:chat_group/view/homeview/views/homeview.dart';
+import 'package:chat_group/view/loginview/views/loginview.dart';
+import 'package:chat_group/view/regesterview/views/regesterview.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 
-import 'firebase_options.dart';
+import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
