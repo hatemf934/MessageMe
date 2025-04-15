@@ -1,3 +1,4 @@
+import 'package:chat_group/view/chatview.dart';
 import 'package:chat_group/view/homeview.dart';
 import 'package:chat_group/view/loginview.dart';
 import 'package:chat_group/view/regesterview.dart';
@@ -20,6 +21,7 @@ class MessageMe extends StatelessWidget {
         Homeview.id: (context) => const Homeview(),
         Loginview.id: (context) => const Loginview(),
         Regesterview.id: (context) => const Regesterview(),
+        Chatview.id: (context) => const Chatview(),
       },
     );
   }

@@ -1,3 +1,4 @@
+import 'package:chat_group/view/chatview.dart';
 import 'package:chat_group/widget/button_custom.dart';
 import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class Loginview extends StatelessWidget {
             TextFormFieldCustom(
               colorfocus: Colors.blue[800],
               colorenable: Colors.yellow[900],
-              hintlabel: "Email",
+              hintlabel: "Enter your Email",
             ),
             const SizedBox(
               height: 20,
@@ -34,14 +35,16 @@ class Loginview extends StatelessWidget {
               colorfocus: Colors.blue[800],
               colorenable: Colors.yellow[900],
               obscureText: true,
-              hintlabel: "Password",
+              hintlabel: "Enter your Password",
             ),
             const SizedBox(
               height: 20,
             ),
             ButtonCustom(
               color: Colors.yellow[900],
-              onpressed: () {},
+              onpressed: () {
+                Navigator.pushNamed(context, Chatview.id);
+              },
               textbuttom: "Sign in",
             ),
           ],

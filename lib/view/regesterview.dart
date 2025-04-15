@@ -1,3 +1,4 @@
+import 'package:chat_group/view/chatview.dart';
 import 'package:chat_group/widget/button_custom.dart';
 import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,9 @@ class Regesterview extends StatelessWidget {
             ),
             ButtonCustom(
               color: Colors.blue[800],
-              onpressed: () {},
+              onpressed: () {
+                Navigator.pushNamed(context, Chatview.id);
+              },
               textbuttom: "Log in",
             ),
           ],
