@@ -1,3 +1,6 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/view/homeview/core/colorsmanager.dart';
+import 'package:chat_group/view/homeview/core/textmanager.dart';
 import 'package:flutter/material.dart';
 
 class OrDivider extends StatelessWidget {
@@ -9,25 +12,15 @@ class OrDivider extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          child: Divider(
-            thickness: 1,
-            height: 1,
-            color: Colors.yellow[900],
-          ),
+          child: Divider(thickness: 1, height: 1, color: kPrimaryColor),
         ),
-        const Text(
-          " OR",
-          style:
-              TextStyle(color: Color(0xff2e386b), fontWeight: FontWeight.bold),
+        Text(
+          Textmanager.kOr,
+          style: TextStyle(
+              color: Colorsmanager.ktitlecolor, fontWeight: FontWeight.bold),
         ),
         Expanded(
-          child: Divider(
-            thickness: 1,
-            height: 2,
-            color: Colors.blue[800],
-            endIndent: 3,
-            indent: 5,
-          ),
+          child: Divider(thickness: 1, height: 2, color: kSecondryColor),
         ),
       ],
     );

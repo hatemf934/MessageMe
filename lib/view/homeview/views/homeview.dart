@@ -1,3 +1,10 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/view/homeview/core/colorsmanager.dart';
+import 'package:chat_group/view/homeview/core/fontsizemanager.dart';
+import 'package:chat_group/view/homeview/core/paddingmanager.dart';
+import 'package:chat_group/view/homeview/core/routemanger.dart';
+import 'package:chat_group/view/homeview/core/textmanager.dart';
+import 'package:chat_group/view/homeview/core/widthandhightmanager.dart';
 import 'package:chat_group/view/homeview/widget/custom_google_button.dart';
 import 'package:chat_group/view/homeview/widget/ordivider.dart';
 import 'package:chat_group/view/loginview/views/loginview.dart';
@@ -7,47 +14,47 @@ import 'package:flutter/material.dart';
 
 class Homeview extends StatelessWidget {
   const Homeview({super.key});
-  static String id = "homeview";
+  static String id = RouteManager.kHomeview;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
-              width: 200,
+              klogo,
+              width: Widtmanager.w200,
             ),
-            const Text(
-              "MessageMe",
+            Text(
+              kTitle,
               style: TextStyle(
-                  fontSize: 50,
-                  color: Color(0xff2e386b),
+                  fontSize: Fontsizemanager.font50,
+                  color: Colorsmanager.ktitlecolor,
                   fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: Hightmanager.h20),
             ButtonCustom(
-              color: Colors.yellow[900],
+              color: kPrimaryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Loginview.id);
               },
-              textbuttom: "Sign in",
+              textbuttom: Textmanager.ksignin,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: Hightmanager.h20),
             ButtonCustom(
-              color: Colors.blue[800],
+              color: kSecondryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Regesterview.id);
               },
-              textbuttom: "Sign up",
+              textbuttom: Textmanager.ksignup,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: Hightmanager.h20),
             const OrDivider(),
-            const SizedBox(height: 20),
+            SizedBox(height: Hightmanager.h20),
             const CustomGoogleButoon()
           ],
         ),

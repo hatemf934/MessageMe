@@ -1,3 +1,9 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/view/homeview/core/borderradiues.dart';
+import 'package:chat_group/view/homeview/core/colorsmanager.dart';
+import 'package:chat_group/view/homeview/core/fontsizemanager.dart';
+import 'package:chat_group/view/homeview/core/textmanager.dart';
+import 'package:chat_group/view/homeview/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,28 +14,29 @@ class CustomGoogleButoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 50,
+      height: Hightmanager.h50,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(Borderradiues.bo10),
         gradient: LinearGradient(
-          colors: [Colors.blue[800]!, Colors.yellow[900]!],
+          colors: [kSecondryColor, kPrimaryColor],
           begin: Alignment.topLeft,
           end: Alignment.topRight,
         ),
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Google",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            Textmanager.kGoogle,
+            style: TextStyle(
+                color: Colorsmanager.kwhite, fontSize: Fontsizemanager.font20),
           ),
           SizedBox(
-            width: 10,
+            width: Widtmanager.w10,
           ),
           Icon(
             FontAwesomeIcons.google,
-            color: Colors.white,
+            color: Colorsmanager.kwhite,
           )
         ],
       ),
