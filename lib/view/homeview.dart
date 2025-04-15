@@ -11,7 +11,7 @@ class Homeview extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,27 +22,30 @@ class Homeview extends StatelessWidget {
             ),
             const Text(
               "MessageMe",
-              style: TextStyle(fontSize: 50, color: Color(0xff3b3d60)),
+              style: TextStyle(
+                  fontSize: 50,
+                  color: Color(0xff2e386b),
+                  fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20,
             ),
             ButtonCustom(
-              color: Colors.orange,
+              color: Colors.yellow[900],
               onpressed: () {
                 Navigator.pushNamed(context, Loginview.id);
               },
-              textbuttom: "LOGIN",
+              textbuttom: "Sign in",
             ),
             const SizedBox(
               height: 20,
             ),
             ButtonCustom(
-              color: Colors.blue,
+              color: Colors.blue[800],
               onpressed: () {
                 Navigator.pushNamed(context, Regesterview.id);
               },
-              textbuttom: "REGESTER",
+              textbuttom: "Sign up",
             ),
           ],
         ),

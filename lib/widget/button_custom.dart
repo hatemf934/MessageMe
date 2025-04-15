@@ -9,7 +9,7 @@ class ButtonCustom extends StatelessWidget {
       required this.color});
   final String textbuttom;
   VoidCallback? onpressed;
-  final Color color;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
