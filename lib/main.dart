@@ -1,5 +1,6 @@
 import 'package:chat_group/view/homeview.dart';
 import 'package:chat_group/view/loginview.dart';
+import 'package:chat_group/view/regesterview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MessageMe extends StatelessWidget {
       routes: {
         Homeview.id: (context) => const Homeview(),
         Loginview.id: (context) => const Loginview(),
+        Regesterview.id: (context) => const Regesterview(),
       },
     );
   }

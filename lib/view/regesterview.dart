@@ -1,11 +1,10 @@
-import 'package:chat_group/view/loginview.dart';
-import 'package:chat_group/view/regesterview.dart';
 import 'package:chat_group/widget/button_custom.dart';
+import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
 
-class Homeview extends StatelessWidget {
-  const Homeview({super.key});
-  static String id = "homeview";
+class Regesterview extends StatelessWidget {
+  const Regesterview({super.key});
+  static String id = "regesterview";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,28 +19,24 @@ class Homeview extends StatelessWidget {
               "assets/logo.png",
               width: 200,
             ),
-            const Text(
-              "MessageMe",
-              style: TextStyle(fontSize: 50, color: Color(0xff3b3d60)),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFormFieldCustom(
+              hintlabel: "Email",
             ),
             const SizedBox(
               height: 20,
             ),
-            ButtonCustom(
-              color: Colors.orange,
-              onpressed: () {
-                Navigator.pushNamed(context, Loginview.id);
-              },
-              textbuttom: "LOGIN",
+            TextFormFieldCustom(
+              hintlabel: "Password",
             ),
             const SizedBox(
               height: 20,
             ),
             ButtonCustom(
               color: Colors.blue,
-              onpressed: () {
-                Navigator.pushNamed(context, Regesterview.id);
-              },
+              onpressed: () {},
               textbuttom: "REGESTER",
             ),
           ],
