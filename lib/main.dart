@@ -1,4 +1,5 @@
 import 'package:chat_group/view/homeview.dart';
+import 'package:chat_group/view/loginview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +12,13 @@ class MessageMe extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homeview(),
+      initialRoute: Homeview.id,
+      routes: {
+        Homeview.id: (context) => const Homeview(),
+        Loginview.id: (context) => const Loginview(),
+      },
     );
   }
 }
