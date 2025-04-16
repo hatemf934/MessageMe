@@ -1,9 +1,9 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/view/homeview/core/borderradiues.dart';
-import 'package:chat_group/view/homeview/core/colorsmanager.dart';
-import 'package:chat_group/view/homeview/core/fontsizemanager.dart';
-import 'package:chat_group/view/homeview/core/textmanager.dart';
-import 'package:chat_group/view/homeview/core/widthandhightmanager.dart';
+import 'package:chat_group/core/borderradiues.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -32,7 +32,7 @@ class CustomGoogleButoon extends StatelessWidget {
                 color: Colorsmanager.kwhite, fontSize: Fontsizemanager.font20),
           ),
           SizedBox(
-            width: Widtmanager.w10,
+            width: Widthmanager.w10,
           ),
           Icon(
             FontAwesomeIcons.google,

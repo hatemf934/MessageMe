@@ -1,3 +1,7 @@
+import 'package:chat_group/core/borderradiues.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -14,17 +18,17 @@ class ButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(Borderradiues.bo10),
       ),
       minWidth: double.infinity,
-      height: 50,
-      textColor: Colors.white,
+      height: Hightmanager.h50,
+      textColor: Colorsmanager.kwhite,
       color: color,
       onPressed: onpressed,
       child: Text(
         textbuttom,
-        style: const TextStyle(
-          fontSize: 20,
+        style: TextStyle(
+          fontSize: Fontsizemanager.font20,
         ),
       ),
     );

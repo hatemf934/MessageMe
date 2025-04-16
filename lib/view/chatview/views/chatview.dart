@@ -1,18 +1,23 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/routemanger.dart';
+import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/widget/appbar_chat.dart';
 import 'package:flutter/material.dart';
 
 class Chatview extends StatelessWidget {
   const Chatview({super.key});
-  static String id = "chatview";
+  static String id = RouteManager.kChatview;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colorsmanager.kwhite,
         ),
         title: const AppbarChat(),
-        backgroundColor: Colors.yellow[900],
+        backgroundColor: kPrimaryColor,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -20,24 +25,25 @@ class Chatview extends StatelessWidget {
           Container(),
           Container(
             decoration: BoxDecoration(
-                border: Border(
-                    top: BorderSide(color: Colors.yellow[900]!, width: 2))),
+                border:
+                    Border(top: BorderSide(color: kPrimaryColor, width: 2))),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     onChanged: (value) {},
                     decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 20),
-                        hintStyle: TextStyle(color: Colors.grey[700]),
-                        hintText: "Write your Message here",
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Paddingmanager.p10,
+                            vertical: Paddingmanager.p20),
+                        hintStyle: TextStyle(color: Colorsmanager.kgrey),
+                        hintText: Textmanager.kSendMessage,
                         border: InputBorder.none),
                   ),
                 ),
                 IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.send, color: Colors.blue[800])),
+                    icon: Icon(Icons.send, color: kSecondryColor)),
               ],
             ),
           )

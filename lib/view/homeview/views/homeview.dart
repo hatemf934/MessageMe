@@ -1,10 +1,10 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/view/homeview/core/colorsmanager.dart';
-import 'package:chat_group/view/homeview/core/fontsizemanager.dart';
-import 'package:chat_group/view/homeview/core/paddingmanager.dart';
-import 'package:chat_group/view/homeview/core/routemanger.dart';
-import 'package:chat_group/view/homeview/core/textmanager.dart';
-import 'package:chat_group/view/homeview/core/widthandhightmanager.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/routemanger.dart';
+import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:chat_group/view/homeview/widget/custom_google_button.dart';
 import 'package:chat_group/view/homeview/widget/ordivider.dart';
 import 'package:chat_group/view/loginview/views/loginview.dart';
@@ -27,7 +27,7 @@ class Homeview extends StatelessWidget {
           children: [
             Image.asset(
               klogo,
-              width: Widtmanager.w200,
+              width: Widthmanager.w200,
             ),
             Text(
               kTitle,

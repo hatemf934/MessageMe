@@ -1,3 +1,6 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 class AppbarChat extends StatelessWidget {
@@ -8,15 +11,14 @@ class AppbarChat extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          "assets/logo.png",
-          width: 40,
+          klogo,
+          width: Widthmanager.w40,
         ),
-        const SizedBox(
-          width: 20,
-        ),
-        const Text(
-          "MessageMe",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        SizedBox(width: Widthmanager.w20),
+        Text(
+          kTitle,
+          style: TextStyle(
+              color: Colorsmanager.kwhite, fontWeight: FontWeight.bold),
         )
       ],
     );

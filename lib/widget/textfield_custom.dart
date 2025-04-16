@@ -1,3 +1,5 @@
+import 'package:chat_group/core/borderradiues.dart';
+import 'package:chat_group/core/colorsmanager.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -20,13 +22,13 @@ class TextFormFieldCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       textAlign: TextAlign.center,
-      style: const TextStyle(color: Colors.black),
+      style: TextStyle(color: Colorsmanager.kblack),
       obscureText: obscureText,
       validator: validator,
       onChanged: onchange,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(Borderradiues.bo10),
           borderSide: BorderSide(
             color: colorenable!,
             width: 2,
@@ -34,11 +36,11 @@ class TextFormFieldCustom extends StatelessWidget {
         ),
 
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(Borderradiues.bo10),
           borderSide: BorderSide(color: colorfocus!, width: 2),
         ),
         hintText: hintlabel,
-        hintStyle: const TextStyle(color: Colors.grey),
+        hintStyle: TextStyle(color: Colorsmanager.kMaingrey),
         // label: Text(hintlabel)
       ),
     );

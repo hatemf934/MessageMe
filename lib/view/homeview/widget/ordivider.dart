@@ -1,6 +1,6 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/view/homeview/core/colorsmanager.dart';
-import 'package:chat_group/view/homeview/core/textmanager.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/textmanager.dart';
 import 'package:flutter/material.dart';
 
 class OrDivider extends StatelessWidget {

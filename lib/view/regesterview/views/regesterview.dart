@@ -1,52 +1,63 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/routemanger.dart';
+import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:chat_group/view/chatview/views/chatview.dart';
 import 'package:chat_group/widget/button_custom.dart';
+import 'package:chat_group/widget/textbuttoncustom.dart';
 import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
 
 class Regesterview extends StatelessWidget {
   const Regesterview({super.key});
-  static String id = "regesterview";
+  static String id = RouteManager.kResgesterview;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
-              width: 200,
+              klogo,
+              width: Widthmanager.w200,
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            TextFormFieldCustom(
-              colorenable: Colors.blue[800],
-              colorfocus: Colors.yellow[900],
-              hintlabel: "Enter your Email",
-            ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: Hightmanager.h20,
             ),
             TextFormFieldCustom(
-              colorenable: Colors.blue[800],
-              colorfocus: Colors.yellow[900],
+              colorenable: kSecondryColor,
+              colorfocus: kPrimaryColor,
+              hintlabel: Textmanager.kEnterEmail,
+            ),
+            SizedBox(
+              height: Hightmanager.h20,
+            ),
+            TextFormFieldCustom(
+              colorenable: kSecondryColor,
+              colorfocus: kPrimaryColor,
               obscureText: true,
-              hintlabel: "Enter your Password",
+              hintlabel: Textmanager.kEnterPassword,
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: Hightmanager.h20,
             ),
             ButtonCustom(
-              color: Colors.blue[800],
+              color: kSecondryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Chatview.id);
               },
-              textbuttom: "Log in",
+              textbuttom: Textmanager.ksignin,
             ),
+            TextbuttonCustom(
+                onPressed: () {},
+                textbutton: Textmanager.kHaveAccount,
+                colorbutton: kSecondryColor)
           ],
         ),
       ),
