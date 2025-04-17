@@ -30,7 +30,7 @@ class Regesterview extends StatelessWidget {
           children: [
             Image.asset(
               klogo,
-              height: Hightmanager.h300,
+              height: 200,
             ),
             SizedBox(
               height: Hightmanager.h20,
@@ -71,7 +71,7 @@ class Regesterview extends StatelessWidget {
               },
               textbuttom: Textmanager.kcontinue,
             ),
-            SizedBox(height: Hightmanager.h20),
+            SizedBox(height: Hightmanager.h70),
           ],
         ),
       ),

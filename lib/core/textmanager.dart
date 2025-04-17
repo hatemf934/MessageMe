@@ -9,5 +9,6 @@ class Textmanager {
   static String kEnterEmail = "Enter your Email";
   static String kForgetPassword = 'Forgot Password?';
   static String kHaveAccount = 'Already have an account?';
+  static String kNotHaveAccount = "Don't have an account?";
   static String kSendMessage = "Write your Message here";
 }
