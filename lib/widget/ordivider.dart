@@ -1,4 +1,3 @@
-import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,9 @@ class OrDivider extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Expanded(
-          child: Divider(thickness: 1, height: 1, color: kPrimaryColor),
+          child: Divider(
+            thickness: 0.5,
+          ),
         ),
         Text(
           Textmanager.kOr,
@@ -20,7 +21,9 @@ class OrDivider extends StatelessWidget {
               color: Colorsmanager.kMaingrey, fontWeight: FontWeight.bold),
         ),
         const Expanded(
-          child: Divider(thickness: 1, height: 2, color: kPrimaryColor),
+          child: Divider(
+            thickness: 0.5,
+          ),
         ),
       ],
     );

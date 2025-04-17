@@ -6,6 +6,8 @@ import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:chat_group/view/chatview/views/chatview.dart';
 import 'package:chat_group/widget/button_custom.dart';
+import 'package:chat_group/widget/custom_google_button.dart';
+import 'package:chat_group/widget/ordivider.dart';
 import 'package:chat_group/widget/textbuttoncustom.dart';
 import 'package:chat_group/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +18,19 @@ class Regesterview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colorsmanager.kwhite,
+      ),
       backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               klogo,
-              width: Widthmanager.w200,
+              height: Hightmanager.h300,
             ),
             SizedBox(
               height: Hightmanager.h20,
@@ -35,30 +40,38 @@ class Regesterview extends StatelessWidget {
               colorfocus: kPrimaryColor,
               hintlabel: Textmanager.kEnterEmail,
             ),
-            SizedBox(
-              height: Hightmanager.h20,
-            ),
             TextFormFieldCustom(
               colorenable: kSecondryColor,
               colorfocus: kPrimaryColor,
               obscureText: true,
               hintlabel: Textmanager.kEnterPassword,
             ),
-            SizedBox(
-              height: Hightmanager.h20,
+            SizedBox(height: Hightmanager.h20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  Textmanager.kHaveAccount,
+                ),
+                TextbuttonCustom(
+                    onPressed: () {},
+                    textbutton: Textmanager.klogin,
+                    colorbutton: kPrimaryColor),
+              ],
             ),
+            const OrDivider(),
+            SizedBox(height: Hightmanager.h20),
+            const CustomGoogleButoon(),
+            SizedBox(height: Hightmanager.h20),
             ButtonCustom(
-              colortext: kPrimaryColor,
-              color: kSecondryColor,
+              colortext: kSecondryColor,
+              color: kPrimaryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Chatview.id);
               },
-              textbuttom: Textmanager.ksignin,
+              textbuttom: Textmanager.kcontinue,
             ),
-            TextbuttonCustom(
-                onPressed: () {},
-                textbutton: Textmanager.kHaveAccount,
-                colorbutton: kSecondryColor)
+            SizedBox(height: Hightmanager.h20),
           ],
         ),
       ),

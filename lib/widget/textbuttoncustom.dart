@@ -11,16 +11,13 @@ class TextbuttonCustom extends StatelessWidget {
   final Color colorbutton;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-        onPressed: onPressed,
-        child: Text(
-          textbutton,
-          style: TextStyle(
-            color: colorbutton, // Text color
-            // Underline
-          ),
+    return TextButton(
+      onPressed: onPressed,
+      child: Text(
+        textbutton,
+        style: TextStyle(
+          color: colorbutton, // Text color
+          // Underline
         ),
       ),
     );
