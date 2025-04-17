@@ -2,8 +2,8 @@ class Textmanager {
   Textmanager._();
   static String ksignin = "Sign in";
   static String ksignup = "Sign up";
-  static String kGoogle = "Google";
-  static String kOr = " OR";
+  static String kOr = "   or continue with   ";
+  static String kWelcome = "Welcome to";
   static String kEnterPassword = "Enter your Password";
   static String kEnterEmail = "Enter your Email";
   static String kForgetPassword = 'Forgot Password?';

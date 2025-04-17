@@ -22,22 +22,24 @@ class Homeview extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: Hightmanager.h30),
             Image.asset(
               klogo,
-              width: Widthmanager.w200,
+              height: Hightmanager.h300,
             ),
+            SizedBox(height: Hightmanager.h20),
             Text(
               kTitle,
               style: TextStyle(
                   fontSize: Fontsizemanager.font50,
-                  color: Colorsmanager.ktitlecolor,
+                  color: kPrimaryColor,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: Hightmanager.h20),
+            SizedBox(height: Hightmanager.h70),
             ButtonCustom(
+              colortext: kSecondryColor,
               color: kPrimaryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Loginview.id);
@@ -46,16 +48,18 @@ class Homeview extends StatelessWidget {
             ),
             SizedBox(height: Hightmanager.h20),
             ButtonCustom(
+              colortext: kPrimaryColor,
               color: kSecondryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Regesterview.id);
               },
               textbuttom: Textmanager.ksignup,
             ),
-            SizedBox(height: Hightmanager.h20),
+            const Spacer(flex: 2),
             const OrDivider(),
             SizedBox(height: Hightmanager.h20),
-            const CustomGoogleButoon()
+            const CustomGoogleButoon(),
+            const Spacer(flex: 1),
           ],
         ),
       ),

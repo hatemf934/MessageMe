@@ -50,6 +50,7 @@ class Loginview extends StatelessWidget {
               textbutton: Textmanager.kForgetPassword,
             ),
             ButtonCustom(
+              colortext: kSecondryColor,
               color: kPrimaryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Chatview.id);

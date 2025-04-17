@@ -36,7 +36,7 @@ class Chatview extends StatelessWidget {
                         contentPadding: EdgeInsets.symmetric(
                             horizontal: Paddingmanager.p10,
                             vertical: Paddingmanager.p20),
-                        hintStyle: TextStyle(color: Colorsmanager.kgrey),
+                        hintStyle: TextStyle(color: Colorsmanager.kMaingrey),
                         hintText: Textmanager.kSendMessage,
                         border: InputBorder.none),
                   ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-const String klogo = "assets/logo.png";
+const String klogo = "assets/صوره.PNG";
+const String kfacelogo = "assets/images (1).png";
+const String kgooglelogo = "assets/images.png";
 const String kTitle = "MessageMe";
-Color kPrimaryColor = Colors.yellow[900]!;
-Color kSecondryColor = Colors.blue[800]!;
+const Color kPrimaryColor = Color(0xff17ce92);
+const Color kSecondryColor = Color(0xffe8faf4);

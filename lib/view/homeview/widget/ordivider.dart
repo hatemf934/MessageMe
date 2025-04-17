@@ -11,16 +11,16 @@ class OrDivider extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
+        const Expanded(
           child: Divider(thickness: 1, height: 1, color: kPrimaryColor),
         ),
         Text(
           Textmanager.kOr,
           style: TextStyle(
-              color: Colorsmanager.ktitlecolor, fontWeight: FontWeight.bold),
+              color: Colorsmanager.kMaingrey, fontWeight: FontWeight.bold),
         ),
-        Expanded(
-          child: Divider(thickness: 1, height: 2, color: kSecondryColor),
+        const Expanded(
+          child: Divider(thickness: 1, height: 2, color: kPrimaryColor),
         ),
       ],
     );

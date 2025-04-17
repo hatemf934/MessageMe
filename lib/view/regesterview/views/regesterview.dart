@@ -48,6 +48,7 @@ class Regesterview extends StatelessWidget {
               height: Hightmanager.h20,
             ),
             ButtonCustom(
+              colortext: kPrimaryColor,
               color: kSecondryColor,
               onpressed: () {
                 Navigator.pushNamed(context, Chatview.id);
