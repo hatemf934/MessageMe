@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/borderradiues.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
@@ -11,7 +12,7 @@ Future<void> showOptionsDialog(
     BuildContext context, Function(ImageSource) pickImage) async {
   await showModalBottomSheet(
     context: context,
-    backgroundColor: Colors.teal, // لون الخلفية
+    backgroundColor: kPrimaryColor, // لون الخلفية
     shape: RoundedRectangleBorder(
       borderRadius:
           BorderRadius.vertical(top: Radius.circular(Borderradiues.bo20)),

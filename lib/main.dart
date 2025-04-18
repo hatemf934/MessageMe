@@ -1,6 +1,6 @@
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/view/chatview/views/chatview.dart';
-import 'package:chat_group/view/complete_profile.dart';
+import 'package:chat_group/view/completeprofile/view/complete_profile.dart';
 import 'package:chat_group/view/homeview/views/homeview.dart';
 import 'package:chat_group/view/loginview/views/loginview.dart';
 import 'package:chat_group/view/regesterview/views/regesterview.dart';

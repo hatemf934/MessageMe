@@ -4,7 +4,7 @@ import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
-import 'package:chat_group/view/complete_profile.dart';
+import 'package:chat_group/view/completeprofile/view/complete_profile.dart';
 import 'package:chat_group/widget/button_custom.dart';
 import 'package:chat_group/widget/custom_google_button.dart';
 import 'package:chat_group/widget/ordivider.dart';
