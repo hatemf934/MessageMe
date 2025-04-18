@@ -9,6 +9,7 @@ class ButtonCustom extends StatelessWidget {
   ButtonCustom(
       {super.key,
       required this.textbuttom,
+      this.height = 50,
       this.onpressed,
       required this.color,
       required this.colortext});
@@ -16,6 +17,7 @@ class ButtonCustom extends StatelessWidget {
   VoidCallback? onpressed;
   final Color color;
   final Color colortext;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -23,7 +25,7 @@ class ButtonCustom extends StatelessWidget {
         borderRadius: BorderRadius.circular(Borderradiues.bo30),
       ),
       minWidth: Widthmanager.w380,
-      height: Hightmanager.h50,
+      height: height,
       textColor: Colorsmanager.kwhite,
       color: color,
       onPressed: onpressed,

@@ -1,6 +1,5 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/assets_manager.dart';
-import 'package:chat_group/core/borderradiues.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
@@ -10,6 +9,7 @@ import 'package:chat_group/view/completeprofile/widget/custom_phone_text_feild.d
 import 'package:chat_group/view/completeprofile/widget/custom_text_filed_profile.dart';
 import 'package:chat_group/view/completeprofile/widget/data_birth_feild.dart';
 import 'package:chat_group/view/completeprofile/widget/gender_text_feild.dart.dart';
+import 'package:chat_group/view/startchat_view.dart';
 import 'package:chat_group/widget/button_custom.dart';
 import 'package:chat_group/widget/profile_picture/widgets/profile_picture.dart';
 import 'package:chat_group/widget/profile_picture/widgets/showmodel.dart';
@@ -163,8 +163,10 @@ class _CompleteProfileState extends State<CompleteProfile> {
             ButtonCustom(
               textbuttom: Textmanager.kcontinue,
               color: kPrimaryColor,
-              colortext: Colorsmanager.kwhite,
-              onpressed: () {},
+              colortext: kSecondryColor,
+              onpressed: () {
+                Navigator.pushNamed(context, StartchatView.id);
+              },
             )
           ],
         ),

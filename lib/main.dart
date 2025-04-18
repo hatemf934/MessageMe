@@ -4,6 +4,7 @@ import 'package:chat_group/view/completeprofile/view/complete_profile.dart';
 import 'package:chat_group/view/homeview/views/homeview.dart';
 import 'package:chat_group/view/loginview/views/loginview.dart';
 import 'package:chat_group/view/regesterview/views/regesterview.dart';
+import 'package:chat_group/view/startchat_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class MessageMe extends StatelessWidget {
         Regesterview.id: (context) => const Regesterview(),
         Chatview.id: (context) => const Chatview(),
         CompleteProfile.id: (context) => const CompleteProfile(),
+        StartchatView.id: (context) => const StartchatView(),
       },
     );
   }

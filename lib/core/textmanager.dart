@@ -15,4 +15,5 @@ class Textmanager {
   static String kCamera = 'Camera';
   static String kGallery = 'Gallery';
   static String kCompleteprofile = "Complete your profile";
+  static String kStartchat = "Start Chat";
 }
