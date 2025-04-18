@@ -4,4 +4,5 @@ class RouteManager {
   static String kLoginview = "Loginview";
   static String kResgesterview = "Regesterview";
   static String kChatview = "chatview";
+  static String kProfilview = "profileview";
 }

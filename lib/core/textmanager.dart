@@ -11,4 +11,8 @@ class Textmanager {
   static String kHaveAccount = 'Already have an account?';
   static String kNotHaveAccount = "Don't have an account?";
   static String kSendMessage = "Write your Message here";
+  static String kProfilephoto = "Profile photo";
+  static String kCamera = 'Camera';
+  static String kGallery = 'Gallery';
+  static String kCompleteprofile = "Complete your profile";
 }
