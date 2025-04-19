@@ -1,3 +1,7 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/textmanager.dart';
 import 'package:flutter/material.dart';
 
 class CountryField extends StatelessWidget {
@@ -46,55 +50,79 @@ class CountryField extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: isValid ? Colors.teal : Colors.grey[300]!,
-                width: 1,
+        InkWell(
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                  backgroundColor: kPrimaryColor,
+                  title: Text(Textmanager.kSelectCountry,
+                      style: TextStyle(color: Colorsmanager.kwhite)),
+                  content: SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: ListView.builder(
+                        itemCount: countries.length,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              onCountrySelected(countries[index]["name"]!);
+                              Navigator.pop(context);
+                            },
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Row(
+                                children: [
+                                  Text(countries[index]["flag"]!,
+                                      style: TextStyle(
+                                          fontSize: Fontsizemanager.font20)),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    countries[index]["name"]!,
+                                    style: TextStyle(
+                                        color: Colorsmanager.kwhite,
+                                        fontSize: Fontsizemanager.font20),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  )),
+            );
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: isValid ? Colors.teal : Colors.grey[300]!,
+                  width: 1,
+                ),
               ),
             ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  if (selectedFlag.isNotEmpty)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Text(selectedFlag),
-                    ),
-                  Text(
-                    value.isEmpty ? 'Select Country' : value,
-                    style: TextStyle(
-                      color: value.isEmpty ? Colors.grey[400] : Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-              PopupMenuButton<String>(
-                icon: const Icon(Icons.keyboard_arrow_down),
-                onSelected: (String result) {
-                  onCountrySelected(result);
-                },
-                itemBuilder: (BuildContext context) {
-                  return countries.map<PopupMenuItem<String>>((country) {
-                    return PopupMenuItem<String>(
-                      value: country["name"]!,
-                      child: Row(
-                        children: [
-                          Text(country["flag"]!),
-                          const SizedBox(width: 8),
-                          Text(country["name"]!),
-                        ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    if (selectedFlag.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(selectedFlag),
                       ),
-                    );
-                  }).toList();
-                },
-              ),
-            ],
+                    Text(
+                      value.isEmpty ? 'Select Country' : value,
+                      style: TextStyle(
+                        color: value.isEmpty ? Colors.grey[400] : Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                const Icon(Icons.keyboard_arrow_down),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 16),

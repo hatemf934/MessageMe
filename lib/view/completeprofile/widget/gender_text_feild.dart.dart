@@ -1,3 +1,9 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 class GenderDropdownField extends StatelessWidget {
@@ -27,49 +33,75 @@ class GenderDropdownField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[600],
+            fontSize: Fontsizemanager.font15,
+            color: Colorsmanager.kGrey600,
           ),
         ),
-        const SizedBox(height: 8),
-        Container(
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: isValid ? Colors.teal : Colors.grey[300]!,
-                width: 1,
-              ),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                value.isEmpty ? 'Gender' : value,
-                style: TextStyle(
-                  color: value.isEmpty ? Colors.grey[400] : Colors.black,
+        SizedBox(height: Hightmanager.h8),
+        InkWell(
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                  backgroundColor: kPrimaryColor,
+                  title: Text(Textmanager.kSelectCountry,
+                      style: TextStyle(color: Colorsmanager.kwhite)),
+                  content: SizedBox(
+                    width: Widthmanager.w200,
+                    height: Hightmanager.h100,
+                    child: ListView.builder(
+                        itemCount: options.length,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              onChanged(options[index]);
+                              Navigator.pop(context);
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: Paddingmanager.p10),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    options[index],
+                                    style: TextStyle(
+                                        color: Colorsmanager.kwhite,
+                                        fontSize: Fontsizemanager.font20),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  )),
+            );
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
+                  width: 1,
                 ),
               ),
-              PopupMenuButton<String>(
-                icon: const Icon(Icons.keyboard_arrow_down),
-                onSelected: (String result) {
-                  onChanged(result);
-                },
-                itemBuilder: (BuildContext context) {
-                  return options.map<PopupMenuItem<String>>((String item) {
-                    return PopupMenuItem<String>(
-                      value: item,
-                      child: Text(item),
-                    );
-                  }).toList();
-                },
-              ),
-            ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  value.isEmpty ? Textmanager.kGender : value,
+                  style: TextStyle(
+                    color: value.isEmpty
+                        ? Colorsmanager.kGrey300
+                        : Colorsmanager.kblack,
+                  ),
+                ),
+                const Icon(Icons.keyboard_arrow_down),
+              ],
+            ),
           ),
         ),
-        SizedBox(
-          height: 16,
-        )
+        SizedBox(height: Hightmanager.h16)
       ],
     );
   }

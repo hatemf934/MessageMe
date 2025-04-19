@@ -17,6 +17,7 @@ class Hightmanager {
   Hightmanager._();
   static double h5 = 5;
   static double h8 = 8;
+  static double h16 = 16;
   static double h20 = 20;
   static double h25 = 25;
   static double h30 = 30;
@@ -24,6 +25,7 @@ class Hightmanager {
   static double h60 = 60;
   static double h70 = 70;
   static double h80 = 80;
+  static double h100 = 100;
   static double h200 = 200;
   static double h230 = 230;
   static double h300 = 300;

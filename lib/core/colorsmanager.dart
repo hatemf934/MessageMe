@@ -9,4 +9,5 @@ class Colorsmanager {
   static Color kMaingrey = Colors.grey;
   static Color kTransparent = Colors.transparent;
   static Color kGrey300 = Colors.grey[300]!;
+  static Color kGrey600 = Colors.grey[600]!;
 }
