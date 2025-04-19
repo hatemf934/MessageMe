@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/view/accountview/core/textmanager_account.dart';
@@ -43,25 +44,30 @@ class ListOfListTile extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                title: Text(TextmanagerAccount.kSelectfont),
+                backgroundColor: kPrimaryColor,
+                title: Text(TextmanagerAccount.kSelectfont,
+                    style: TextStyle(color: Colorsmanager.kwhite)),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     ListTile(
-                      title: Text(TextmanagerAccount.kSmall),
+                      title: Text(TextmanagerAccount.kSmall,
+                          style: TextStyle(color: Colorsmanager.kwhite)),
                       onTap: () {
                         Navigator.pop(context);
                       },
                     ),
                     ListTile(
-                      title: Text(TextmanagerAccount.kMedium),
+                      title: Text(TextmanagerAccount.kMedium,
+                          style: TextStyle(color: Colorsmanager.kwhite)),
                       selected: true,
                       onTap: () {
                         Navigator.pop(context);
                       },
                     ),
                     ListTile(
-                      title: Text(TextmanagerAccount.kLarge),
+                      title: Text(TextmanagerAccount.kLarge,
+                          style: TextStyle(color: Colorsmanager.kwhite)),
                       onTap: () {
                         Navigator.pop(context);
                       },
@@ -81,19 +87,22 @@ class ListOfListTile extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                title: Text(TextmanagerAccount.kLagout),
-                content: Text(TextmanagerAccount.kAreyousure),
+                backgroundColor: kPrimaryColor,
+                title: Text(TextmanagerAccount.kLagout,
+                    style: TextStyle(color: Colorsmanager.kwhite)),
+                content: Text(TextmanagerAccount.kAreyousure,
+                    style: TextStyle(color: Colorsmanager.kwhite)),
                 actions: [
                   TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Text(TextmanagerAccount.kCancel),
-                  ),
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(TextmanagerAccount.kCancel,
+                          style: TextStyle(color: Colorsmanager.kwhite))),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(TextmanagerAccount.kLagout),
-                  ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(TextmanagerAccount.kLagout,
+                          style: TextStyle(color: Colors.red[900]))),
                 ],
               ),
             );

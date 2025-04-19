@@ -5,7 +5,6 @@ import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:chat_group/view/accountview/view/account_view.dart';
-import 'package:chat_group/view/chatview/views/chatview.dart';
 import 'package:chat_group/widget/button_custom.dart';
 import 'package:flutter/material.dart';
 
