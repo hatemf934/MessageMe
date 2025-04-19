@@ -6,4 +6,5 @@ class RouteManager {
   static String kChatview = "chatview";
   static String kProfilview = "profileview";
   static String kStartchat = "startchat";
+  static String kAccountview = "accountview";
 }

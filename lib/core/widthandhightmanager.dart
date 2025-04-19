@@ -6,7 +6,9 @@ class Widthmanager {
   static double w30 = 30;
   static double w40 = 40;
   static double w70 = 70;
+  static double w80 = 80;
   static double w100 = 100;
+  static double w130 = 130;
   static double w200 = 200;
   static double w380 = 380;
 }
@@ -21,6 +23,7 @@ class Hightmanager {
   static double h50 = 50;
   static double h60 = 60;
   static double h70 = 70;
+  static double h80 = 80;
   static double h200 = 200;
   static double h230 = 230;
   static double h300 = 300;

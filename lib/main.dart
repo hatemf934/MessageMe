@@ -1,4 +1,5 @@
 import 'package:chat_group/firebase_options.dart';
+import 'package:chat_group/view/accountview/view/account_view.dart';
 import 'package:chat_group/view/chatview/views/chatview.dart';
 import 'package:chat_group/view/completeprofile/view/complete_profile.dart';
 import 'package:chat_group/view/homeview/views/homeview.dart';
@@ -33,6 +34,7 @@ class MessageMe extends StatelessWidget {
         Chatview.id: (context) => const Chatview(),
         CompleteProfile.id: (context) => const CompleteProfile(),
         StartchatView.id: (context) => const StartchatView(),
+        AccountView.id: (context) => const AccountView(),
       },
     );
   }
