@@ -20,4 +20,5 @@ class Textmanager {
   static String kGender = "Gender";
   static String kMale = "Male";
   static String kFemale = "Female";
+  static String kChat = "Chat";
 }
