@@ -77,7 +77,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
   void _onGenderChanged(String? value) {
     setState(() {
       _selectedGender = value ?? '';
-      _genderValid = _selectedGender.isNotEmpty;
+      _genderValid = true;
     });
   }
 

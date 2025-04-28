@@ -1,4 +1,8 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/view/completeprofile/widget/custom_text_filed_profile.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 class PhoneNumberField extends StatelessWidget {
@@ -36,11 +40,39 @@ class PhoneNumberField extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(countryFlag),
-              const SizedBox(width: 4),
-              Text(countryCode),
-              const Icon(Icons.arrow_drop_down, size: 16),
-              const SizedBox(width: 4),
+              CountryCodePicker(
+                searchStyle: TextStyle(color: Colors.white, fontSize: 16.0),
+                closeIcon: Icon(
+                  Icons.close,
+                  color: Colorsmanager.kwhite,
+                ),
+                searchDecoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: "Search a country...",
+                  hintStyle: TextStyle(
+                      color: Colors.grey[800],
+                      fontSize: Fontsizemanager.font15),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 8, vertical: 10.0),
+                  prefixIcon: Icon(Icons.search, color: Colors.grey[800]),
+                ),
+                dialogBackgroundColor: kPrimaryColor,
+                dialogTextStyle: TextStyle(color: Colorsmanager.kwhite),
+                headerTextStyle: TextStyle(
+                    color: Colorsmanager.kwhite,
+                    fontSize: Fontsizemanager.font20),
+                initialSelection: "eg",
+                favorite: ['+966', 'eg'],
+                padding: EdgeInsets.only(bottom: 8),
+                showCountryOnly: false,
+                showFlag: true,
+              ),
+              SizedBox(width: 4),
             ],
           ),
         ),
