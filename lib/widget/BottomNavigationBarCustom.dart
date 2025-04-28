@@ -26,7 +26,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
             BottomNavigationBarItem(
               icon: IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Chatview.id);
+                  Navigator.pushReplacementNamed(context, Chatview.id);
                 },
                 icon: Icon(
                   Icons.chat,
@@ -41,7 +41,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
             BottomNavigationBarItem(
               icon: IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, AccountView.id);
+                  Navigator.pushReplacementNamed(context, AccountView.id);
                 },
                 icon: Icon(
                   Icons.person,

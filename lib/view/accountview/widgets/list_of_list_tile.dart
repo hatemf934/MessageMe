@@ -3,6 +3,7 @@ import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/view/accountview/core/textmanager_account.dart';
 import 'package:chat_group/view/accountview/widgets/list_tile_custom.dart';
+import 'package:chat_group/view/personal_profile.dart';
 import 'package:flutter/material.dart';
 
 class ListOfListTile extends StatelessWidget {
@@ -14,7 +15,9 @@ class ListOfListTile extends StatelessWidget {
       children: [
         ListTileCustom(
           title: TextmanagerAccount.kPresonalinfo,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, PersonalProfile.id);
+          },
           iconDataLeading: Icons.person_outline,
           rowtrailing: Container(),
         ),

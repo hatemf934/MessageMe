@@ -6,3 +6,4 @@ const String kgooglelogo = "assets/images.png";
 const String kTitle = "MessageMe";
 const Color kPrimaryColor = Colors.teal;
 const Color kSecondryColor = Color(0xffe8faf4);
+const double sizeProfilePhoto = 150;

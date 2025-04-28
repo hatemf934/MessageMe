@@ -1,3 +1,4 @@
+import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class ListTileCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        leading: Icon(iconDataLeading, color: Colors.black),
+        leading: Icon(iconDataLeading, color: Colorsmanager.kblack),
         title: Text(
           title,
           style: TextStyle(color: titlecolor, fontWeight: FontWeight.bold),
@@ -27,7 +28,7 @@ class ListTileCustom extends StatelessWidget {
           children: [
             rowtrailing,
             SizedBox(width: Widthmanager.w2),
-            const Icon(Icons.chevron_right, color: Colors.black),
+            Icon(Icons.chevron_right, color: Colorsmanager.kblack),
           ],
         ),
         onTap: onTap);

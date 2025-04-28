@@ -1,8 +1,6 @@
-import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
-import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/view/completeprofile/widget/country_feild.dart';
@@ -10,22 +8,20 @@ import 'package:chat_group/view/completeprofile/widget/custom_phone_text_feild.d
 import 'package:chat_group/view/completeprofile/widget/custom_text_filed_profile.dart';
 import 'package:chat_group/view/completeprofile/widget/data_birth_feild.dart';
 import 'package:chat_group/view/completeprofile/widget/gender_text_feild.dart.dart';
-import 'package:chat_group/view/startchat_view.dart';
-import 'package:chat_group/widget/button_custom.dart';
 import 'package:chat_group/widget/profile_picture.dart';
 import 'package:chat_group/widget/showmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class CompleteProfile extends StatefulWidget {
-  const CompleteProfile({super.key});
-  static String id = RouteManager.kProfilview;
+class PersonalProfile extends StatefulWidget {
+  const PersonalProfile({super.key});
+  static String id = RouteManager.kPersonalProfile;
 
   @override
-  _CompleteProfileState createState() => _CompleteProfileState();
+  State<PersonalProfile> createState() => _PersonalProfileState();
 }
 
-class _CompleteProfileState extends State<CompleteProfile> {
+class _PersonalProfileState extends State<PersonalProfile> {
   final ImagePicker _picker = ImagePicker();
   XFile? selectedImage; // لتخزين الصورة المختارة
 
@@ -107,18 +103,40 @@ class _CompleteProfileState extends State<CompleteProfile> {
     return Scaffold(
       backgroundColor: Colorsmanager.kwhite,
       body: Padding(
-        padding: EdgeInsets.all(Paddingmanager.p20),
+        padding: EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                // يمكنك إضافة توجيه للصفحة السابقة هنا
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {
+                    // يمكنك إضافة توجيه للصفحة السابقة هنا
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back, size: Fontsizemanager.font30),
+                ),
+                Text(
+                  Textmanager.kPersonalProfile,
+                  style: TextStyle(
+                      fontSize: Fontsizemanager.font20,
+                      fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {
+                    // يمكنك إضافة توجيه للصفحة السابقة هنا
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.edit_note,
+                    size: Fontsizemanager.font30,
+                  ),
+                ),
+              ],
             ),
 
             Center(
@@ -161,14 +179,6 @@ class _CompleteProfileState extends State<CompleteProfile> {
               onCountrySelected: _onCountrySelected,
               isValid: _countryValid,
             ),
-            ButtonCustom(
-              textbuttom: Textmanager.kcontinue,
-              color: kPrimaryColor,
-              colortext: kSecondryColor,
-              onpressed: () {
-                Navigator.pushNamed(context, StartchatView.id);
-              },
-            )
           ],
         ),
       ),

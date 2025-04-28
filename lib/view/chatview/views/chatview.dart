@@ -39,7 +39,7 @@ class _ChatviewState extends State<Chatview> {
           children: [
             Container(),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   border:
                       Border(top: BorderSide(color: kPrimaryColor, width: 2))),
               child: Row(
@@ -58,7 +58,7 @@ class _ChatviewState extends State<Chatview> {
                   ),
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.send, color: kSecondryColor)),
+                      icon: const Icon(Icons.send, color: kSecondryColor)),
                 ],
               ),
             )
