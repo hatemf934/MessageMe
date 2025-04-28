@@ -11,21 +11,18 @@ class CountryField extends StatelessWidget {
   final Function(String) onCountrySelected;
   final List<Map<String, String>> countries;
 
-  const CountryField({
-    Key? key,
-    required this.label,
-    required this.value,
-    required this.onCountrySelected,
-    this.isValid = false,
-    this.countries = const [
-      {"name": "United States", "flag": "🇺🇸"},
-      {"name": "United Kingdom", "flag": "🇬🇧"},
-      {"name": "Canada", "flag": "🇨🇦"},
-      {"name": "Australia", "flag": "🇦🇺"},
-      {"name": "Egypt", "flag": "🇪🇬"},
+  const CountryField(
+      {Key? key,
+      required this.label,
+      required this.value,
+      required this.onCountrySelected,
+      this.isValid = false,
+      this.countries = listCountry
+
       // Add more countries as needed
-    ],
-  }) : super(key: key);
+
+      })
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +57,7 @@ class CountryField extends StatelessWidget {
                       style: TextStyle(color: Colorsmanager.kwhite)),
                   content: SizedBox(
                     width: 200,
-                    height: 200,
+                    height: 400,
                     child: ListView.builder(
                         itemCount: countries.length,
                         itemBuilder: (context, index) {

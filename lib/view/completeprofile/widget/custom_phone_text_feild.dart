@@ -41,7 +41,7 @@ class PhoneNumberField extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CountryCodePicker(
-                searchStyle: TextStyle(color: Colors.white, fontSize: 16.0),
+                // searchStyle: TextStyle(color: Colors.white, fontSize: 16.0),
                 closeIcon: Icon(
                   Icons.close,
                   color: Colorsmanager.kwhite,
