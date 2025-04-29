@@ -57,7 +57,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
           currentIndex: selectedIndex,
           selectedItemColor: kPrimaryColor,
           unselectedItemColor: Colorsmanager.kMaingrey,
-          backgroundColor: Colorsmanager.kwhite,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           type: BottomNavigationBarType.fixed,
           elevation: 0,
           onTap: onItemTapped,

@@ -1,4 +1,3 @@
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:flutter/material.dart';
 
 class ListTileProfile extends StatelessWidget {
@@ -13,12 +12,16 @@ class ListTileProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(iconDataLeading, color: Colorsmanager.kblack),
+      leading: Icon(iconDataLeading, color: Theme.of(context).primaryColor),
       title: Text(
         title,
-        style: const TextStyle(fontWeight: FontWeight.bold),
+        style: TextStyle(
+            fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
       ),
-      subtitle: Text(subtitle),
+      subtitle: Text(
+        subtitle,
+        style: TextStyle(color: Theme.of(context).primaryColor),
+      ),
     );
   }
 }

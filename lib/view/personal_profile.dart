@@ -1,5 +1,4 @@
 import 'package:chat_group/core/assets_manager.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -101,7 +100,6 @@ class _PersonalProfileState extends State<PersonalProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -117,11 +115,16 @@ class _PersonalProfileState extends State<PersonalProfile> {
                     // يمكنك إضافة توجيه للصفحة السابقة هنا
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back, size: Fontsizemanager.font30),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: Fontsizemanager.font30,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 Text(
                   Textmanager.kPersonalProfile,
                   style: TextStyle(
+                      color: Theme.of(context).primaryColor,
                       fontSize: Fontsizemanager.font20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -134,6 +137,7 @@ class _PersonalProfileState extends State<PersonalProfile> {
                   icon: Icon(
                     Icons.edit_note,
                     size: Fontsizemanager.font30,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ],

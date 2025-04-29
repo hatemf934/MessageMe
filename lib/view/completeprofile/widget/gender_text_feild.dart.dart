@@ -44,7 +44,7 @@ class GenderDropdownField extends StatelessWidget {
               context: context,
               builder: (context) => AlertDialog(
                   backgroundColor: kPrimaryColor,
-                  title: Text(Textmanager.kSelectCountry,
+                  title: Text(Textmanager.kSelectGender,
                       style: TextStyle(color: Colorsmanager.kwhite)),
                   content: SizedBox(
                     width: Widthmanager.w200,
@@ -93,10 +93,13 @@ class GenderDropdownField extends StatelessWidget {
                   style: TextStyle(
                     color: value.isEmpty
                         ? Colorsmanager.kGrey300
-                        : Colorsmanager.kblack,
+                        : Theme.of(context).primaryColor,
                   ),
                 ),
-                const Icon(Icons.keyboard_arrow_down),
+                Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.grey[600],
+                ),
               ],
             ),
           ),

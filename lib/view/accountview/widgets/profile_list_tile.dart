@@ -1,6 +1,5 @@
 import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/borderradiues.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
@@ -39,16 +38,20 @@ class ProfileListTile extends StatelessWidget {
                   Text(
                     'Hatem Fathy',
                     style: TextStyle(
-                        color: Colorsmanager.kblack,
+                        color: Theme.of(context).primaryColor,
                         fontSize: Fontsizemanager.font20,
                         fontWeight: FontWeight.bold),
                   ),
+                  SizedBox(height: Hightmanager.h5),
                   Text("hatemf934@gmail.com",
-                      style: TextStyle(color: Colorsmanager.kblack)),
+                      style: TextStyle(color: Theme.of(context).primaryColor)),
                 ],
               ),
               const Spacer(),
-              const Icon(Icons.chevron_right),
+              Icon(
+                Icons.chevron_right,
+                color: Theme.of(context).primaryColor,
+              ),
             ],
           ),
         ),

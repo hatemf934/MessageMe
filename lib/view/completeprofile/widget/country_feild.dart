@@ -112,12 +112,14 @@ class CountryField extends StatelessWidget {
                     Text(
                       value.isEmpty ? 'Select Country' : value,
                       style: TextStyle(
-                        color: value.isEmpty ? Colors.grey[400] : Colors.black,
+                        color: value.isEmpty
+                            ? Colors.grey[400]
+                            : Theme.of(context).primaryColor,
                       ),
                     ),
                   ],
                 ),
-                const Icon(Icons.keyboard_arrow_down),
+                Icon(Icons.keyboard_arrow_down, color: Colors.grey[600]),
               ],
             ),
           ),

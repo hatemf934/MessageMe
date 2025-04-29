@@ -1,6 +1,5 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/assets_manager.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
@@ -105,7 +104,6 @@ class _CompleteProfileState extends State<CompleteProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.all(Paddingmanager.p20),
         child: Column(
@@ -115,19 +113,19 @@ class _CompleteProfileState extends State<CompleteProfile> {
             IconButton(
               padding: EdgeInsets.zero,
               onPressed: () {
-                // يمكنك إضافة توجيه للصفحة السابقة هنا
                 Navigator.pop(context);
               },
-              icon: const Icon(Icons.arrow_back),
+              icon: Icon(
+                Icons.arrow_back,
+                color: Theme.of(context).primaryColor,
+              ),
             ),
 
             Center(
               child: ProfilePictureWithEditIcon(
                 onEditPressed: _onEditPressed,
                 size: Fontsizemanager.font150,
-                imageAsset: selectedImage?.path ??
-                    AssetsManager
-                        .kprofile, // عرض الصورة المختارة أو الصورة الافتراضية
+                imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
               ),
             ),
             CustomTextFieldProfil(

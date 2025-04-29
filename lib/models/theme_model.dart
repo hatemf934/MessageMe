@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class ThemeModel {
   final darkmode = ThemeData(
     useMaterial3: false,
+    primaryColor: Colorsmanager.kwhite,
     scaffoldBackgroundColor: Colors.grey[900],
     textTheme: TextTheme(
       titleMedium: TextStyle(
@@ -15,6 +16,7 @@ class ThemeModel {
   );
   final lightmode = ThemeData(
     useMaterial3: false,
+    primaryColor: Colorsmanager.kblack,
     scaffoldBackgroundColor: Colorsmanager.kwhite,
     textTheme: TextTheme(
       titleMedium: TextStyle(

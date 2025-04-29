@@ -40,15 +40,30 @@ class DateOfBirthField extends StatelessWidget {
               builder: (context, child) {
                 return Theme(
                   data: Theme.of(context).copyWith(
+                    dialogBackgroundColor: kPrimaryColor,
+                    inputDecorationTheme: InputDecorationTheme(
+                      labelStyle: TextStyle(color: Colorsmanager.kwhite),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colorsmanager.kwhite),
+                          borderRadius: BorderRadius.circular(8)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colorsmanager.kwhite),
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                    textSelectionTheme: TextSelectionThemeData(
+                        cursorColor: Colorsmanager.kwhite,
+                        selectionColor: Colorsmanager.kwhite.withOpacity(0.3),
+                        selectionHandleColor: Colorsmanager.kwhite),
                     textTheme: TextTheme(
                         bodyMedium: TextStyle(color: Colorsmanager.kwhite)),
-                    splashColor: Colors.transparent,
                     dividerTheme: DividerThemeData(color: Colorsmanager.kwhite),
+                    splashColor: Colors.transparent,
                     colorScheme: ColorScheme.light(
-                        primary: Colorsmanager.kwhite,
-                        onPrimary: kPrimaryColor,
-                        onSurface: Colorsmanager.kwhite,
-                        surface: kPrimaryColor),
+                      primary: kPrimaryColor,
+                      onPrimary: Colorsmanager.kwhite,
+                      onSurface: Colorsmanager.kwhite,
+                      surface: kPrimaryColor,
+                    ),
                     textButtonTheme: TextButtonThemeData(
                       style: TextButton.styleFrom(
                           foregroundColor: Colorsmanager.kwhite),
@@ -78,7 +93,9 @@ class DateOfBirthField extends StatelessWidget {
                 Text(
                   value.isEmpty ? 'Date of Birth' : value,
                   style: TextStyle(
-                    color: value.isEmpty ? Colors.grey[400] : Colors.black,
+                    color: value.isEmpty
+                        ? Colors.grey[400]
+                        : Theme.of(context).primaryColor,
                   ),
                 ),
                 Icon(

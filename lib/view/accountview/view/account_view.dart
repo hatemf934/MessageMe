@@ -1,5 +1,4 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
@@ -30,22 +29,22 @@ class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colorsmanager.kwhite,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: Hightmanager.h30),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(width: Widthmanager.w10),
                 Image.asset(
                   klogo,
                   height: Hightmanager.h30,
                 ),
-                SizedBox(width: Widthmanager.w130),
+                SizedBox(width: Widthmanager.w10),
                 Text(
                   TextmanagerAccount.kAccount,
                   style: TextStyle(
+                      color: Theme.of(context).primaryColor,
                       fontSize: Fontsizemanager.font20,
                       fontWeight: FontWeight.bold),
                 )

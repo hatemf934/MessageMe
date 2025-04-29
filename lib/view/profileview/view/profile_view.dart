@@ -16,7 +16,6 @@ class Profileview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.all(Paddingmanager.p15),
         child: Column(
@@ -30,12 +29,17 @@ class Profileview extends StatelessWidget {
                     // يمكنك إضافة توجيه للصفحة السابقة هنا
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back, size: Fontsizemanager.font30),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: Fontsizemanager.font30,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 SizedBox(width: Widthmanager.w20),
                 Text(
                   Textmanager.kProfile,
                   style: TextStyle(
+                      color: Theme.of(context).primaryColor,
                       fontSize: Fontsizemanager.font20,
                       fontWeight: FontWeight.bold),
                 ),

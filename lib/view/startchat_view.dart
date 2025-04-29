@@ -1,5 +1,4 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -14,7 +13,6 @@ class StartchatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colorsmanager.kwhite,
       body: Column(
         children: [
           SizedBox(height: Hightmanager.h50),

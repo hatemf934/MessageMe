@@ -18,6 +18,7 @@ class ListOfListTile extends StatelessWidget {
     return Column(
       children: [
         ListTileCustom(
+          titlecolor: Theme.of(context).primaryColor,
           title: TextmanagerAccount.kPresonalinfo,
           onTap: () {
             Navigator.pushNamed(context, PersonalProfile.id);
@@ -26,6 +27,7 @@ class ListOfListTile extends StatelessWidget {
           rowtrailing: Container(),
         ),
         ListTileCustom(
+          titlecolor: Theme.of(context).primaryColor,
           title: TextmanagerAccount.kLanguage,
           onTap: () {},
           iconDataLeading: Icons.language_outlined,
@@ -35,6 +37,7 @@ class ListOfListTile extends StatelessWidget {
                   fontSize: Fontsizemanager.font15)),
         ),
         ListTileCustom(
+          titlecolor: Theme.of(context).primaryColor,
           title: TextmanagerAccount.kDarkmode,
           onTap: () {},
           iconDataLeading: Icons.dark_mode_outlined,
@@ -42,7 +45,7 @@ class ListOfListTile extends StatelessWidget {
             builder: (context, state) {
               return Switch(
                   // autofocus: true,
-                  activeColor: Colors.red,
+                  activeColor: kPrimaryColor,
                   value: BlocProvider.of<ThemeCubit>(context).state ==
                       Themecubitstate.dark,
                   onChanged: (value) {
@@ -52,6 +55,7 @@ class ListOfListTile extends StatelessWidget {
           ),
         ),
         ListTileCustom(
+          titlecolor: Theme.of(context).primaryColor,
           title: TextmanagerAccount.kFontsize,
           iconDataLeading: Icons.format_size,
           rowtrailing: Text('Medium',
