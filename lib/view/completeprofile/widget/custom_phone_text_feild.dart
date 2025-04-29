@@ -41,26 +41,24 @@ class PhoneNumberField extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CountryCodePicker(
-                // searchStyle: TextStyle(color: Colors.white, fontSize: 16.0),
                 closeIcon: Icon(
                   Icons.close,
                   color: Colorsmanager.kwhite,
                 ),
                 searchDecoration: InputDecoration(
-                  fillColor: Colors.white,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                    borderSide: BorderSide.none,
-                  ),
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
                   hintText: "Search a country...",
                   hintStyle: TextStyle(
-                      color: Colors.grey[800],
+                      color: Colorsmanager.kwhite,
                       fontSize: Fontsizemanager.font15),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 8, vertical: 10.0),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey[800]),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Icon(Icons.search, color: Colorsmanager.kwhite),
+                  ),
                 ),
+                searchStyle: TextStyle(
+                    color: Colorsmanager.kwhite,
+                    fontSize: Fontsizemanager.font15),
                 dialogBackgroundColor: kPrimaryColor,
                 dialogTextStyle: TextStyle(color: Colorsmanager.kwhite),
                 headerTextStyle: TextStyle(
@@ -70,6 +68,14 @@ class PhoneNumberField extends StatelessWidget {
                 favorite: ['+966', 'eg'],
                 padding: EdgeInsets.only(bottom: 8),
                 showCountryOnly: false,
+                emptySearchBuilder: (context) {
+                  return Center(
+                    child: Text(
+                      "No country found",
+                      style: TextStyle(color: Colorsmanager.kwhite),
+                    ),
+                  );
+                },
                 showFlag: true,
               ),
               SizedBox(width: 4),
