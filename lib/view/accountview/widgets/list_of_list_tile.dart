@@ -1,10 +1,15 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/cubits/themecubit/theme_cubit.dart';
+import 'package:chat_group/cubits/themecubit/theme_state.dart';
+import 'package:chat_group/models/theme_model.dart';
 import 'package:chat_group/view/accountview/core/textmanager_account.dart';
 import 'package:chat_group/view/accountview/widgets/list_tile_custom.dart';
 import 'package:chat_group/view/personal_profile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListOfListTile extends StatelessWidget {
   const ListOfListTile({super.key});
@@ -34,7 +39,18 @@ class ListOfListTile extends StatelessWidget {
           title: TextmanagerAccount.kDarkmode,
           onTap: () {},
           iconDataLeading: Icons.dark_mode_outlined,
-          rowtrailing: Container(),
+          rowtrailing: BlocBuilder<ThemeCubit, Themecubitstate>(
+            builder: (context, state) {
+              return Switch(
+                  // autofocus: true,
+                  activeColor: Colors.red,
+                  value: BlocProvider.of<ThemeCubit>(context).state ==
+                      Themecubitstate.dark,
+                  onChanged: (value) {
+                    BlocProvider.of<ThemeCubit>(context).tochange();
+                  });
+            },
+          ),
         ),
         ListTileCustom(
           title: TextmanagerAccount.kFontsize,
