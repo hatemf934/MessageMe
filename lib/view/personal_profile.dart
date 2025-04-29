@@ -1,5 +1,6 @@
 import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/view/completeprofile/widget/country_feild.dart';
@@ -101,7 +102,7 @@ class _PersonalProfileState extends State<PersonalProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(Paddingmanager.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,12 +148,10 @@ class _PersonalProfileState extends State<PersonalProfile> {
               child: ProfilePictureWithEditIcon(
                 onEditPressed: _onEditPressed,
                 size: Fontsizemanager.font150,
-                imageAsset: selectedImage?.path ??
-                    AssetsManager
-                        .kprofile, // عرض الصورة المختارة أو الصورة الافتراضية
+                imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
               ),
             ),
-            CustomTextFieldProfil(
+            CustomTextFieldName(
               label: Textmanager.kFullName,
               hintText: Textmanager.kFullName,
               controller: _nameController,

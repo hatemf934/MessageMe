@@ -6,7 +6,7 @@ class ThemeModel {
   final darkmode = ThemeData(
     useMaterial3: false,
     primaryColor: Colorsmanager.kwhite,
-    scaffoldBackgroundColor: Colors.grey[900],
+    scaffoldBackgroundColor: Colorsmanager.kGrey900,
     textTheme: TextTheme(
       titleMedium: TextStyle(
         fontSize: Fontsizemanager.font15,

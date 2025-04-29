@@ -1,7 +1,9 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 class CountryField extends StatelessWidget {
@@ -17,11 +19,7 @@ class CountryField extends StatelessWidget {
       required this.value,
       required this.onCountrySelected,
       this.isValid = false,
-      this.countries = listCountry
-
-      // Add more countries as needed
-
-      })
+      this.countries = listCountry})
       : super(key: key);
 
   @override
@@ -42,11 +40,9 @@ class CountryField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[600],
-          ),
+              fontSize: Fontsizemanager.font15, color: Colorsmanager.kGrey600),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: Hightmanager.h8),
         InkWell(
           onTap: () {
             showDialog(
@@ -56,8 +52,8 @@ class CountryField extends StatelessWidget {
                   title: Text(Textmanager.kSelectCountry,
                       style: TextStyle(color: Colorsmanager.kwhite)),
                   content: SizedBox(
-                    width: 200,
-                    height: 400,
+                    width: Widthmanager.w200,
+                    height: Hightmanager.h400,
                     child: ListView.builder(
                         itemCount: countries.length,
                         itemBuilder: (context, index) {
@@ -67,14 +63,14 @@ class CountryField extends StatelessWidget {
                               Navigator.pop(context);
                             },
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: Paddingmanager.p8),
                               child: Row(
                                 children: [
                                   Text(countries[index]["flag"]!,
                                       style: TextStyle(
                                           fontSize: Fontsizemanager.font20)),
-                                  const SizedBox(width: 8),
+                                  SizedBox(width: Widthmanager.w10),
                                   Text(
                                     countries[index]["name"]!,
                                     style: TextStyle(
@@ -90,13 +86,12 @@ class CountryField extends StatelessWidget {
             );
           },
           child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: Paddingmanager.p8),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: isValid ? Colors.teal : Colors.grey[300]!,
-                  width: 1,
-                ),
+                    color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
+                    width: Widthmanager.w1),
               ),
             ),
             child: Row(
@@ -106,25 +101,25 @@ class CountryField extends StatelessWidget {
                   children: [
                     if (selectedFlag.isNotEmpty)
                       Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
+                        padding: EdgeInsets.only(right: Paddingmanager.p8),
                         child: Text(selectedFlag),
                       ),
                     Text(
-                      value.isEmpty ? 'Select Country' : value,
+                      value.isEmpty ? Textmanager.kSelectCountry : value,
                       style: TextStyle(
                         color: value.isEmpty
-                            ? Colors.grey[400]
+                            ? Colorsmanager.kGrey300
                             : Theme.of(context).primaryColor,
                       ),
                     ),
                   ],
                 ),
-                Icon(Icons.keyboard_arrow_down, color: Colors.grey[600]),
+                Icon(Icons.keyboard_arrow_down, color: Colorsmanager.kGrey600),
               ],
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: Hightmanager.h16),
       ],
     );
   }

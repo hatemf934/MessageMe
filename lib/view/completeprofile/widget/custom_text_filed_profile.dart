@@ -1,6 +1,11 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextFieldProfil extends StatelessWidget {
+class CustomTextFieldName extends StatelessWidget {
   final String label;
   final String hintText;
   final TextEditingController controller;
@@ -8,7 +13,7 @@ class CustomTextFieldProfil extends StatelessWidget {
   final Widget? prefixWidget;
   final Widget? suffixWidget;
   final TextInputType keyboardType;
-  const CustomTextFieldProfil({
+  const CustomTextFieldName({
     Key? key,
     required this.label,
     required this.hintText,
@@ -27,33 +32,31 @@ class CustomTextFieldProfil extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[600],
+            fontSize: Fontsizemanager.font15,
+            color: Colorsmanager.kGrey600,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: Hightmanager.h8),
         TextField(
           controller: controller,
           keyboardType: keyboardType,
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: TextStyle(
-              color: Colors.grey[400],
-            ),
-            contentPadding: const EdgeInsets.symmetric(vertical: 8),
+            hintStyle: TextStyle(color: Colorsmanager.kGrey300),
+            contentPadding: EdgeInsets.symmetric(vertical: Paddingmanager.p8),
             isDense: true,
             border: InputBorder.none,
             prefixIcon: prefixWidget,
             suffixIcon: isValid
-                ? const Icon(Icons.check, color: Colors.teal)
+                ? const Icon(Icons.check, color: kPrimaryColor)
                 : suffixWidget,
           ),
         ),
         Container(
-          height: 1,
-          color: isValid ? Colors.teal : Colors.grey[300],
+          height: Hightmanager.h1,
+          color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: Hightmanager.h16),
       ],
     );
   }

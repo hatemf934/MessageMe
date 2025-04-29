@@ -128,7 +128,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                 imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
               ),
             ),
-            CustomTextFieldProfil(
+            CustomTextFieldName(
               label: Textmanager.kFullName,
               hintText: Textmanager.kFullName,
               controller: _nameController,

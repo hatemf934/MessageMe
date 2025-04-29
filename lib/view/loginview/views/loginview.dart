@@ -1,4 +1,5 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -24,10 +25,8 @@ class Loginview extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: Hightmanager.h60),
-            Image.asset(klogo, height: Hightmanager.h200),
-            SizedBox(
-              height: Hightmanager.h20,
-            ),
+            Image.asset(AssetsManager.klogo, height: Hightmanager.h200),
+            SizedBox(height: Hightmanager.h20),
             TextFormFieldCustom(
               colorfocus: kPrimaryColor,
               colorenable: kSecondryColor,

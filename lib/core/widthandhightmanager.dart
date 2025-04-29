@@ -1,6 +1,8 @@
 class Widthmanager {
   Widthmanager._();
+  static double w1 = 1;
   static double w2 = 2;
+  static double w4 = 4;
   static double w10 = 10;
   static double w20 = 20;
   static double w30 = 30;
@@ -8,13 +10,13 @@ class Widthmanager {
   static double w70 = 70;
   static double w80 = 80;
   static double w100 = 100;
-  static double w130 = 130;
   static double w200 = 200;
   static double w380 = 380;
 }
 
 class Hightmanager {
   Hightmanager._();
+  static double h1 = 1;
   static double h5 = 5;
   static double h8 = 8;
   static double h16 = 16;
@@ -29,4 +31,5 @@ class Hightmanager {
   static double h200 = 200;
   static double h230 = 230;
   static double h300 = 300;
+  static double h400 = 400;
 }

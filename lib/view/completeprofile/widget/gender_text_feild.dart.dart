@@ -80,9 +80,8 @@ class GenderDropdownField extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
-                  width: 1,
-                ),
+                    color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
+                    width: Widthmanager.w1),
               ),
             ),
             child: Row(
@@ -96,10 +95,7 @@ class GenderDropdownField extends StatelessWidget {
                         : Theme.of(context).primaryColor,
                   ),
                 ),
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.grey[600],
-                ),
+                Icon(Icons.keyboard_arrow_down, color: Colorsmanager.kGrey600),
               ],
             ),
           ),

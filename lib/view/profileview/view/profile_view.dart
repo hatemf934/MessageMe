@@ -26,7 +26,6 @@ class Profileview extends StatelessWidget {
                 IconButton(
                   padding: EdgeInsets.zero,
                   onPressed: () {
-                    // يمكنك إضافة توجيه للصفحة السابقة هنا
                     Navigator.pop(context);
                   },
                   icon: Icon(

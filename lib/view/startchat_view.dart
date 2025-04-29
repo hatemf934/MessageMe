@@ -1,4 +1,5 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -20,15 +21,13 @@ class StartchatView extends StatelessWidget {
             children: [
               SizedBox(width: Widthmanager.w30),
               Image.asset(
-                klogo,
+                AssetsManager.klogo,
                 height: Hightmanager.h30,
               ),
             ],
           ),
           const Spacer(flex: 1),
-          Image.asset(
-            klogo,
-          ),
+          Image.asset(AssetsManager.klogo),
           SizedBox(height: Hightmanager.h50),
           Text(
             kTitle,

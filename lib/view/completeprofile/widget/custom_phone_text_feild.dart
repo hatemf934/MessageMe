@@ -1,3 +1,6 @@
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:chat_group/view/completeprofile/widget/country_code_picker_custom.dart';
 import 'package:chat_group/view/completeprofile/widget/custom_text_filed_profile.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +27,7 @@ class PhoneNumberField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTextFieldProfil(
+    return CustomTextFieldName(
       label: label,
       hintText: hintText,
       controller: controller,
@@ -33,17 +36,17 @@ class PhoneNumberField extends StatelessWidget {
       prefixWidget: InkWell(
         onTap: onCountryCodeTap,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: const Row(
+          padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p8),
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CountryCodePickerCustom(),
-              SizedBox(width: 4),
+              const CountryCodePickerCustom(),
+              SizedBox(width: Widthmanager.w4),
             ],
           ),
         ),
       ),
-      suffixWidget: const Icon(Icons.phone, color: Colors.grey),
+      suffixWidget: Icon(Icons.phone, color: Colorsmanager.kGrey600),
     );
   }
 }

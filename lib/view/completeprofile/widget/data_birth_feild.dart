@@ -1,5 +1,10 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/borderradiues.dart';
 import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/textmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 class DateOfBirthField extends StatelessWidget {
@@ -24,11 +29,11 @@ class DateOfBirthField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[600],
+            fontSize: Fontsizemanager.font15,
+            color: Colorsmanager.kGrey600,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: Hightmanager.h8),
         InkWell(
           onTap: () async {
             final DateTime? picked = await showDatePicker(
@@ -45,10 +50,12 @@ class DateOfBirthField extends StatelessWidget {
                       labelStyle: TextStyle(color: Colorsmanager.kwhite),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colorsmanager.kwhite),
-                          borderRadius: BorderRadius.circular(8)),
+                          borderRadius:
+                              BorderRadius.circular(Borderradiues.bo10)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colorsmanager.kwhite),
-                          borderRadius: BorderRadius.circular(8)),
+                          borderRadius:
+                              BorderRadius.circular(Borderradiues.bo10)),
                     ),
                     textSelectionTheme: TextSelectionThemeData(
                         cursorColor: Colorsmanager.kwhite,
@@ -57,7 +64,7 @@ class DateOfBirthField extends StatelessWidget {
                     textTheme: TextTheme(
                         bodyMedium: TextStyle(color: Colorsmanager.kwhite)),
                     dividerTheme: DividerThemeData(color: Colorsmanager.kwhite),
-                    splashColor: Colors.transparent,
+                    splashColor: Colorsmanager.kTransparent,
                     colorScheme: ColorScheme.light(
                       primary: kPrimaryColor,
                       onPrimary: Colorsmanager.kwhite,
@@ -78,12 +85,12 @@ class DateOfBirthField extends StatelessWidget {
             }
           },
           child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: Paddingmanager.p8),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: isValid ? Colors.teal : Colors.grey[300]!,
-                  width: 1,
+                  color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
+                  width: Widthmanager.w1,
                 ),
               ),
             ),
@@ -91,23 +98,23 @@ class DateOfBirthField extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  value.isEmpty ? 'Date of Birth' : value,
+                  value.isEmpty ? Textmanager.kDateOfBrith : value,
                   style: TextStyle(
                     color: value.isEmpty
-                        ? Colors.grey[400]
+                        ? Colorsmanager.kGrey300
                         : Theme.of(context).primaryColor,
                   ),
                 ),
                 Icon(
                   Icons.calendar_today,
-                  size: 20,
-                  color: Colors.grey[600],
+                  size: Fontsizemanager.font20,
+                  color: Colorsmanager.kGrey600,
                 ),
               ],
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: Hightmanager.h16),
       ],
     );
   }

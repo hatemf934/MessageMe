@@ -1,4 +1,5 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
@@ -24,7 +25,7 @@ class Homeview extends StatelessWidget {
           children: [
             SizedBox(height: Hightmanager.h30),
             Image.asset(
-              klogo,
+              AssetsManager.klogo,
               height: Hightmanager.h300,
             ),
             SizedBox(height: Hightmanager.h20),

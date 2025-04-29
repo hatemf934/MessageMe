@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-const String klogo = "assets/صوره-removebg-preview.png";
-const String kfacelogo = "assets/images__1_-removebg-preview.png";
-const String kgooglelogo = "assets/images-removebg-preview.png";
 const String kTitle = "MessageMe";
 const Color kPrimaryColor = Colors.teal;
 const Color kSecondryColor = Color(0xffe8faf4);
 const double sizeProfilePhoto = 150;
+const List<String> favoritelist = ['+966', 'eg'];
+const String kinitialSelection = 'eg';
 const List<Map<String, String>> listCountry = [
   {"name": "United States", "flag": "🇺🇸"},
   {"name": "United Kingdom", "flag": "🇬🇧"},

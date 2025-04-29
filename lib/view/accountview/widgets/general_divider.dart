@@ -14,9 +14,7 @@ class GeneralDivider extends StatelessWidget {
         SizedBox(width: Widthmanager.w10),
         Text(
           TextmanagerAccount.kGeneral,
-          style: TextStyle(
-            color: Colorsmanager.kMaingrey,
-          ),
+          style: TextStyle(color: Colorsmanager.kMaingrey),
         ),
         Expanded(
           child: Divider(

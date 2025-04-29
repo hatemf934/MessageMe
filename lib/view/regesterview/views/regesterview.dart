@@ -1,4 +1,5 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -24,7 +25,7 @@ class Regesterview extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: Hightmanager.h60),
-            Image.asset(klogo, height: 200),
+            Image.asset(AssetsManager.klogo, height: 200),
             SizedBox(height: Hightmanager.h20),
             TextFormFieldCustom(
               colorenable: kSecondryColor,

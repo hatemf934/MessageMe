@@ -1,5 +1,6 @@
 import 'package:chat_group/core/borderradiues.dart';
 import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -29,15 +30,12 @@ class TextFormFieldCustom extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Borderradiues.bo10),
-          borderSide: BorderSide(
-            color: colorenable!,
-            width: 2,
-          ),
+          borderSide: BorderSide(color: colorenable!, width: Widthmanager.w2),
         ),
 
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Borderradiues.bo10),
-          borderSide: BorderSide(color: colorfocus!, width: 2),
+          borderSide: BorderSide(color: colorfocus!, width: Widthmanager.w2),
         ),
         hintText: hintlabel,
         hintStyle: TextStyle(color: Colorsmanager.kMaingrey),

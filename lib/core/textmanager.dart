@@ -16,20 +16,19 @@ class Textmanager {
   static String kProfile = "Profile";
   static String kCamera = 'Camera';
   static String kGallery = 'Gallery';
-  static String kCompleteprofile = "Complete your profile";
   static String kStartchat = "Start Chat";
   static String kSelectCountry = "Select Country";
   static String kSelectGender = "Select Gender";
   static String kGender = "Gender";
-  static String kMale = "Male";
-  static String kFemale = "Female";
   static String kChat = "Chat";
   static String kFullName = "Full Name";
   static String kPhoneNumber = "Phone Number";
   static String k000000000 = "000 000 000";
   static String kCountry = "Country";
-  static String kDateOfBrith = "Date Of Brith";
+  static String kDateOfBrith = "Date of Brith";
   static String kPhone = "Phone";
   static String kName = "Name";
   static String kEmail = "Email";
+  static String ksearchCountry = "Search a country...";
+  static String kNoCountryFound = "No country found";
 }

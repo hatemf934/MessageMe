@@ -1,4 +1,4 @@
-import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
@@ -37,7 +37,7 @@ class _AccountViewState extends State<AccountView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  klogo,
+                  AssetsManager.klogo,
                   height: Hightmanager.h30,
                 ),
                 SizedBox(width: Widthmanager.w10),

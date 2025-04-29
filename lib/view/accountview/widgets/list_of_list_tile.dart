@@ -124,7 +124,7 @@ class ListOfListTile extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       child: Text(TextmanagerAccount.kLagout,
-                          style: TextStyle(color: Colors.red[900]))),
+                          style: TextStyle(color: Colorsmanager.kred))),
                 ],
               ),
             );

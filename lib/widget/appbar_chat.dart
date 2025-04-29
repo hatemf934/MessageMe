@@ -1,4 +1,5 @@
 import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/assets_manager.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class AppbarChat extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          klogo,
+          AssetsManager.klogo,
           width: Widthmanager.w40,
         ),
         SizedBox(width: Widthmanager.w20),

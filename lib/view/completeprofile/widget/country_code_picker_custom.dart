@@ -1,6 +1,8 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
+import 'package:chat_group/core/paddingmanager.dart';
+import 'package:chat_group/core/textmanager.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -13,18 +15,18 @@ class CountryCodePickerCustom extends StatelessWidget {
       showFlag: true,
       showCountryOnly: false,
       dialogBackgroundColor: kPrimaryColor,
-      barrierColor: Colors.black.withOpacity(0.5),
-      initialSelection: "eg",
-      favorite: ['+966', 'eg'],
+      barrierColor: Colorsmanager.kblackOpacity,
+      initialSelection: kinitialSelection,
+      favorite: favoritelist,
       textStyle: TextStyle(color: Theme.of(context).primaryColor),
       closeIcon: Icon(Icons.close, color: Colorsmanager.kwhite),
       searchDecoration: InputDecoration(
           border: const OutlineInputBorder(borderSide: BorderSide.none),
-          hintText: "Search a country...",
+          hintText: Textmanager.ksearchCountry,
           hintStyle: TextStyle(
               color: Colorsmanager.kwhite, fontSize: Fontsizemanager.font15),
           prefixIcon: Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: Paddingmanager.p20),
             child: Icon(Icons.search, color: Colorsmanager.kwhite),
           )),
       searchStyle: TextStyle(
@@ -32,10 +34,10 @@ class CountryCodePickerCustom extends StatelessWidget {
       dialogTextStyle: TextStyle(color: Colorsmanager.kwhite),
       headerTextStyle: TextStyle(
           color: Colorsmanager.kwhite, fontSize: Fontsizemanager.font20),
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: EdgeInsets.only(bottom: Paddingmanager.p8),
       emptySearchBuilder: (context) {
         return Center(
-          child: Text("No country found",
+          child: Text(Textmanager.kNoCountryFound,
               style: TextStyle(color: Colorsmanager.kwhite)),
         );
       },
