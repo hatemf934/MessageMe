@@ -1,5 +1,4 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -18,23 +17,15 @@ class Regesterview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colorsmanager.kwhite,
-      ),
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              klogo,
-              height: 200,
-            ),
-            SizedBox(
-              height: Hightmanager.h20,
-            ),
+            SizedBox(height: Hightmanager.h60),
+            Image.asset(klogo, height: 200),
+            SizedBox(height: Hightmanager.h20),
             TextFormFieldCustom(
               colorenable: kSecondryColor,
               colorfocus: kPrimaryColor,
@@ -52,6 +43,7 @@ class Regesterview extends StatelessWidget {
               children: [
                 Text(
                   Textmanager.kHaveAccount,
+                  style: Theme.of(context).textTheme.titleMedium!,
                 ),
                 TextbuttonCustom(
                     onPressed: () {},

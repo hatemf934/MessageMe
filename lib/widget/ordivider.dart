@@ -10,9 +10,10 @@ class OrDivider extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Expanded(
+        Expanded(
           child: Divider(
             thickness: 0.5,
+            color: Colorsmanager.kMaingrey,
           ),
         ),
         Text(
@@ -20,9 +21,10 @@ class OrDivider extends StatelessWidget {
           style: TextStyle(
               color: Colorsmanager.kMaingrey, fontWeight: FontWeight.bold),
         ),
-        const Expanded(
+        Expanded(
           child: Divider(
             thickness: 0.5,
+            color: Colorsmanager.kMaingrey,
           ),
         ),
       ],

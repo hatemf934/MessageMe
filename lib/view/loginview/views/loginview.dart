@@ -1,5 +1,4 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
 import 'package:chat_group/core/textmanager.dart';
@@ -18,16 +17,13 @@ class Loginview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colorsmanager.kwhite,
-      ),
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: Hightmanager.h60),
             Image.asset(klogo, height: Hightmanager.h200),
             SizedBox(
               height: Hightmanager.h20,
@@ -51,9 +47,8 @@ class Loginview extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  Textmanager.kNotHaveAccount,
-                ),
+                Text(Textmanager.kNotHaveAccount,
+                    style: Theme.of(context).textTheme.titleMedium!),
                 TextbuttonCustom(
                     onPressed: () {},
                     textbutton: Textmanager.ksignup,

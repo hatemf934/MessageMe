@@ -3,7 +3,6 @@ import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/cubits/themecubit/theme_cubit.dart';
 import 'package:chat_group/cubits/themecubit/theme_state.dart';
-import 'package:chat_group/models/theme_model.dart';
 import 'package:chat_group/view/accountview/core/textmanager_account.dart';
 import 'package:chat_group/view/accountview/widgets/list_tile_custom.dart';
 import 'package:chat_group/view/personal_profile.dart';

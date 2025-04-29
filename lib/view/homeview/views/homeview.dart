@@ -1,5 +1,4 @@
 import 'package:chat_group/constant.dart';
-import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/paddingmanager.dart';
 import 'package:chat_group/core/routemanger.dart';
@@ -18,7 +17,6 @@ class Homeview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colorsmanager.kwhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
         child: Column(
@@ -57,7 +55,7 @@ class Homeview extends StatelessWidget {
             ),
             const Spacer(flex: 2),
             const OrDivider(),
-            SizedBox(height: Hightmanager.h20),
+            SizedBox(height: Hightmanager.h50),
             const CustomGoogleButoon(),
             const Spacer(flex: 1),
           ],
