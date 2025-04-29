@@ -1,3 +1,5 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
 import 'package:flutter/material.dart';
 
 class DateOfBirthField extends StatelessWidget {
@@ -35,6 +37,26 @@ class DateOfBirthField extends StatelessWidget {
                   DateTime.now().subtract(const Duration(days: 365 * 18)),
               firstDate: DateTime(1900),
               lastDate: DateTime.now(),
+              builder: (context, child) {
+                return Theme(
+                  data: Theme.of(context).copyWith(
+                    textTheme: TextTheme(
+                        bodyMedium: TextStyle(color: Colorsmanager.kwhite)),
+                    splashColor: Colors.transparent,
+                    dividerTheme: DividerThemeData(color: Colorsmanager.kwhite),
+                    colorScheme: ColorScheme.light(
+                        primary: Colorsmanager.kwhite,
+                        onPrimary: kPrimaryColor,
+                        onSurface: Colorsmanager.kwhite,
+                        surface: kPrimaryColor),
+                    textButtonTheme: TextButtonThemeData(
+                      style: TextButton.styleFrom(
+                          foregroundColor: Colorsmanager.kwhite),
+                    ),
+                  ),
+                  child: child!,
+                );
+              },
             );
             if (picked != null) {
               onDateSelected(picked);

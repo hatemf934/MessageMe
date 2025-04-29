@@ -4,7 +4,7 @@ import 'package:chat_group/core/colorsmanager.dart';
 import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/core/textmanager.dart';
 import 'package:chat_group/core/widthandhightmanager.dart';
-import 'package:chat_group/widget/profile_picture/widgets/build_options.dart';
+import 'package:chat_group/widget/build_options.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

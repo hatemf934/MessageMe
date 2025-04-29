@@ -1,4 +1,8 @@
+import 'package:chat_group/constant.dart';
+import 'package:chat_group/core/colorsmanager.dart';
+import 'package:chat_group/core/fontsizemanager.dart';
 import 'package:chat_group/view/completeprofile/widget/custom_text_filed_profile.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 class PhoneNumberField extends StatelessWidget {
@@ -36,11 +40,45 @@ class PhoneNumberField extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(countryFlag),
-              const SizedBox(width: 4),
-              Text(countryCode),
-              const Icon(Icons.arrow_drop_down, size: 16),
-              const SizedBox(width: 4),
+              CountryCodePicker(
+                closeIcon: Icon(
+                  Icons.close,
+                  color: Colorsmanager.kwhite,
+                ),
+                searchDecoration: InputDecoration(
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
+                  hintText: "Search a country...",
+                  hintStyle: TextStyle(
+                      color: Colorsmanager.kwhite,
+                      fontSize: Fontsizemanager.font15),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Icon(Icons.search, color: Colorsmanager.kwhite),
+                  ),
+                ),
+                searchStyle: TextStyle(
+                    color: Colorsmanager.kwhite,
+                    fontSize: Fontsizemanager.font15),
+                dialogBackgroundColor: kPrimaryColor,
+                dialogTextStyle: TextStyle(color: Colorsmanager.kwhite),
+                headerTextStyle: TextStyle(
+                    color: Colorsmanager.kwhite,
+                    fontSize: Fontsizemanager.font20),
+                initialSelection: "eg",
+                favorite: ['+966', 'eg'],
+                padding: EdgeInsets.only(bottom: 8),
+                showCountryOnly: false,
+                emptySearchBuilder: (context) {
+                  return Center(
+                    child: Text(
+                      "No country found",
+                      style: TextStyle(color: Colorsmanager.kwhite),
+                    ),
+                  );
+                },
+                showFlag: true,
+              ),
+              SizedBox(width: 4),
             ],
           ),
         ),

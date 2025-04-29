@@ -12,6 +12,8 @@ class Textmanager {
   static String kNotHaveAccount = "Don't have an account?";
   static String kSendMessage = "Write your Message here";
   static String kProfilephoto = "Profile photo";
+  static String kPersonalProfile = "Personal Profile";
+  static String kProfile = "Profile";
   static String kCamera = 'Camera';
   static String kGallery = 'Gallery';
   static String kCompleteprofile = "Complete your profile";
@@ -20,4 +22,13 @@ class Textmanager {
   static String kGender = "Gender";
   static String kMale = "Male";
   static String kFemale = "Female";
+  static String kChat = "Chat";
+  static String kFullName = "Full Name";
+  static String kPhoneNumber = "Phone Number";
+  static String k000000000 = "000 000 000";
+  static String kCountry = "Country";
+  static String kDateOfBrith = "Date Of Brith";
+  static String kPhone = "Phone";
+  static String kName = "Name";
+  static String kEmail = "Email";
 }
