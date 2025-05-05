@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const String kTitle = "MessageMe";
-const Color kPrimaryColor = Colors.teal;
+const Color kPrimaryColor = Color(0xff008080);
 const Color kSecondryColor = Color(0xffe8faf4);
 const double sizeProfilePhoto = 150;
 const List<String> favoritelist = ['+966', 'eg'];
