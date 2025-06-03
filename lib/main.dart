@@ -40,7 +40,7 @@ class MessageMe extends StatelessWidget {
               routes: {
                 Homeview.id: (context) => const Homeview(),
                 Loginview.id: (context) => const Loginview(),
-                Regesterview.id: (context) => const Regesterview(),
+                Regesterview.id: (context) => Regesterview(),
                 Chatview.id: (context) => const Chatview(),
                 CompleteProfile.id: (context) => const CompleteProfile(),
                 StartchatView.id: (context) => const StartchatView(),
