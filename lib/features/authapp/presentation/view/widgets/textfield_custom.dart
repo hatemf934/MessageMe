@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
@@ -22,8 +23,9 @@ class TextFormFieldCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: kPrimaryColor,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colorsmanager.kblack),
+      style: TextStyle(color: Theme.of(context).textTheme.titleMedium!.color),
       obscureText: obscureText,
       validator: validator,
       onChanged: onchange,

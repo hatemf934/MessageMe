@@ -10,7 +10,7 @@ class PhoneNumberField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool isValid;
-  final Function()? onCountryCodeTap;
+  // final Function()? onCountryCodeTap;
   final String countryCode;
   final String countryFlag;
 
@@ -20,7 +20,7 @@ class PhoneNumberField extends StatelessWidget {
     required this.hintText,
     required this.controller,
     this.isValid = false,
-    this.onCountryCodeTap,
+    // this.onCountryCodeTap,
     this.countryCode = "+1",
     this.countryFlag = "🇪🇬",
   }) : super(key: key);
@@ -34,7 +34,7 @@ class PhoneNumberField extends StatelessWidget {
       isValid: isValid,
       keyboardType: TextInputType.phone,
       prefixWidget: InkWell(
-        onTap: onCountryCodeTap,
+        // onTap: onCountryCodeTap,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p8),
           child: Row(
