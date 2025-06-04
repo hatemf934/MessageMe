@@ -6,6 +6,7 @@ import 'package:chat_group/features/account/presentation/manager/themeapp/theme_
 import 'package:chat_group/core/utils/textmanager_account.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/list_tile_custom.dart';
 import 'package:chat_group/features/account/presentation/view/personal_profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -120,8 +121,8 @@ class ListOfListTile extends StatelessWidget {
                       child: Text(TextmanagerAccount.kCancel,
                           style: TextStyle(color: Colorsmanager.kwhite))),
                   TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
+                      onPressed: () async {
+                        await FirebaseAuth.instance.signOut();
                       },
                       child: Text(TextmanagerAccount.kLagout,
                           style: TextStyle(color: Colorsmanager.kred))),

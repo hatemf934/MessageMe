@@ -1,5 +1,7 @@
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_cubit.dart';
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_state.dart';
+import 'package:chat_group/features/authapp/data/auth_repo_implement.dart';
+import 'package:chat_group/features/authapp/presentation/manager/cubit/signup_cubit.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';
 import 'package:chat_group/features/account/presentation/view/account_view.dart';
@@ -47,10 +49,15 @@ class _MessageMeState extends State<MessageMe> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeCubit(),
-      child: BlocBuilder<ThemeCubit, Themecubitstate>(
-        builder: (context, state) {
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => ThemeCubit(),
+          ),
+          BlocProvider(create: (context) => SignupCubit(AuthRepoImplement())),
+        ],
+        child:
+            BlocBuilder<ThemeCubit, Themecubitstate>(builder: (context, state) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               initialRoute: FirebaseAuth.instance.currentUser == null
@@ -70,8 +77,6 @@ class _MessageMeState extends State<MessageMe> {
               theme: state == Themecubitstate.light
                   ? ThemeModel().lightmode
                   : ThemeModel().darkmode);
-        },
-      ),
-    );
+        }));
   }
 }
