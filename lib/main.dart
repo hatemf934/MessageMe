@@ -11,6 +11,7 @@ import 'package:chat_group/features/account/presentation/view/personal_profile.d
 import 'package:chat_group/features/account/presentation/view/profile_view.dart';
 import 'package:chat_group/features/authapp/presentation/view/regesterview.dart';
 import 'package:chat_group/features/authapp/presentation/view/startchat_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
@@ -24,10 +25,26 @@ void main() async {
   runApp(const MessageMe());
 }
 
-class MessageMe extends StatelessWidget {
+class MessageMe extends StatefulWidget {
   const MessageMe({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MessageMe> createState() => _MessageMeState();
+}
+
+class _MessageMeState extends State<MessageMe> {
+  @override
+  void initState() {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('++++++++User is currently signed out!');
+      } else {
+        print('+++++++++User is signed in!');
+      }
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -36,7 +53,9 @@ class MessageMe extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              initialRoute: Homeview.id,
+              initialRoute: FirebaseAuth.instance.currentUser == null
+                  ? Homeview.id
+                  : Chatview.id,
               routes: {
                 Homeview.id: (context) => const Homeview(),
                 Loginview.id: (context) => const Loginview(),
