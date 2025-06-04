@@ -6,9 +6,20 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthRepoImplement implements AuthRepo {
   @override
   Future<Either<Failure, UserCredential>> signUpWithEmailAndPassword(
-      {required String email, required String password}) {
-    // TODO: implement signUpWithEmailAndPassword
-    throw UnimplementedError();
+      {required String email, required String password}) async {
+    try {
+      final userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return Right(userCredential);
+    } on FirebaseAuthException catch (e) {
+      return Left(AuthFailure.fromFirebaseAuthException(e));
+    } catch (e) {
+      return Left(AuthFailure(
+          message: 'An unexpected error occurred', statusCode: 500));
+    }
   }
 
   @override
