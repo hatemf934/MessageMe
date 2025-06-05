@@ -31,4 +31,5 @@ class Textmanager {
   static String kEmail = "Email";
   static String ksearchCountry = "Search a country...";
   static String kNoCountryFound = "No country found";
+  static String kError = "Error";
 }
