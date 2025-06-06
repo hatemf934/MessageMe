@@ -1,6 +1,6 @@
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_cubit.dart';
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_state.dart';
-import 'package:chat_group/features/authapp/data/auth_repo_implement.dart';
+import 'package:chat_group/features/authapp/data/repo/auth_repo_implement.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';

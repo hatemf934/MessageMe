@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:chat_group/features/authapp/data/auth_repo.dart';
+import 'package:chat_group/features/authapp/data/repo/auth_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

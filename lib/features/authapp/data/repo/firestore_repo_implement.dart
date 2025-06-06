@@ -1,6 +1,6 @@
 import 'package:chat_group/core/error/failure.dart';
 import 'package:chat_group/core/error/firestore_failure.dart';
-import 'package:chat_group/features/authapp/data/firestore_repo.dart';
+import 'package:chat_group/features/authapp/data/repo/firestore_repo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 

@@ -1,5 +1,5 @@
 import 'package:chat_group/core/error/failure.dart';
-import 'package:chat_group/features/authapp/data/auth_repo.dart';
+import 'package:chat_group/features/authapp/data/repo/auth_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
