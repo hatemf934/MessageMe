@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class FirestoreRepo {
   // User Info Operations
-  Future<Either<Failure, void>> sendUserInfo({
+  Future<void> sendUserInfo({
     required String name,
     required String phone,
     required String country,
