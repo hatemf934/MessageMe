@@ -15,7 +15,6 @@ class DatausersCubit extends Cubit<DatausersState> {
       required String gender,
       required String email,
       required String date}) async {
-    emit(DatausersLoading());
     await firestoreRepo.sendUserInfo(
       name: name,
       phone: phone,

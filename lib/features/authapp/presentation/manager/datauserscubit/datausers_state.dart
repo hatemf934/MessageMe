@@ -16,5 +16,3 @@ final class DatausersFailure extends DatausersState {
   final int statusCode;
   const DatausersFailure({required this.statusCode, required this.errmessage});
 }
-
-final class DatausersLoading extends DatausersState {}

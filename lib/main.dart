@@ -1,6 +1,8 @@
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_cubit.dart';
 import 'package:chat_group/features/account/presentation/manager/themeapp/theme_state.dart';
 import 'package:chat_group/features/authapp/data/repo/auth_repo_implement.dart';
+import 'package:chat_group/features/authapp/data/repo/firestore_repo_implement.dart';
+import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';
@@ -55,6 +57,8 @@ class _MessageMeState extends State<MessageMe> {
             create: (context) => ThemeCubit(),
           ),
           BlocProvider(create: (context) => SignupCubit(AuthRepoImplement())),
+          BlocProvider(
+              create: (context) => DatausersCubit(FirestoreRepoImplement())),
         ],
         child:
             BlocBuilder<ThemeCubit, Themecubitstate>(builder: (context, state) {
