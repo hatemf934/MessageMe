@@ -10,6 +10,7 @@ abstract class FirestoreRepo {
     required String image,
     required String gender,
     required String date,
+    required String email,
   });
 
   Future<Either<Failure, Map<String, dynamic>>> getUserInfo();

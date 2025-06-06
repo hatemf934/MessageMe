@@ -29,7 +29,8 @@ class Regesterview extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSucsses) {
-          Navigator.pushReplacementNamed(context, CompleteProfile.id);
+          Navigator.pushReplacementNamed(context, CompleteProfile.id,
+              arguments: email);
         } else if (state is SignupFailure) {
           CustomAswesomeDialog().AwesomeDialogError(
             context: context,

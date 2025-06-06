@@ -117,6 +117,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
 
   @override
   Widget build(BuildContext context) {
+    var email = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(Paddingmanager.p20),
