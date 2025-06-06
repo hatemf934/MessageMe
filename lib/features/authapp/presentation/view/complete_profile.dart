@@ -13,6 +13,7 @@ import 'package:chat_group/features/authapp/presentation/view/startchat_view.dar
 import 'package:chat_group/core/widget/button_custom.dart';
 import 'package:chat_group/features/authapp/presentation/view/widgets/profile_picture.dart';
 import 'package:chat_group/core/widget/showmodel.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -38,6 +39,19 @@ class _CompleteProfileState extends State<CompleteProfile> {
           selectedImage = pickedImage; // تحديث الصورة
         });
       }
+    });
+  }
+
+  CollectionReference infoUsers =
+      FirebaseFirestore.instance.collection("infousers");
+  sendInfoUser() {
+    infoUsers.add({
+      'name': _nameController.text.trim(),
+      'phone': _phoneController.text,
+      'cuontry': _selectedCountry,
+      'image': selectedImage?.path ?? AssetsManager.kprofile,
+      'gender': _selectedGender,
+      'date': _selectedDate,
     });
   }
 
@@ -164,7 +178,8 @@ class _CompleteProfileState extends State<CompleteProfile> {
               color: kPrimaryColor,
               colortext: kSecondryColor,
               onpressed: () {
-                Navigator.pushNamed(context, StartchatView.id);
+                sendInfoUser();
+                Navigator.pushReplacementNamed(context, StartchatView.id);
               },
             )
           ],

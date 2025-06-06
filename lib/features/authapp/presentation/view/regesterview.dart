@@ -5,7 +5,7 @@ import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
 import 'package:chat_group/core/widget/custom_aswesome_dialog.dart';
-import 'package:chat_group/features/authapp/presentation/manager/cubit/signup_cubit.dart';
+import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/view/complete_profile.dart';
 import 'package:chat_group/core/widget/button_custom.dart';
 import 'package:chat_group/core/widget/custom_google_button.dart';

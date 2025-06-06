@@ -43,7 +43,7 @@ class StartchatView extends StatelessWidget {
             color: kPrimaryColor,
             colortext: kSecondryColor,
             onpressed: () {
-              Navigator.pushNamed(context, Chatview.id);
+              Navigator.pushReplacementNamed(context, Chatview.id);
             },
           ),
           const Spacer(flex: 1),
