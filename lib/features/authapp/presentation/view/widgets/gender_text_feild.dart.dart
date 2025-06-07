@@ -1,9 +1,9 @@
-import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
-import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
+import 'package:chat_group/core/widget/showgenderselection.dart';
+import 'package:chat_group/features/authapp/presentation/view/widgets/custom_for_item_complete_profile.dart';
 import 'package:flutter/material.dart';
 
 class GenderDropdownField extends StatelessWidget {
@@ -14,7 +14,7 @@ class GenderDropdownField extends StatelessWidget {
   final List<String> options;
 
   const GenderDropdownField({
-    Key? key,
+    super.key,
     required this.label,
     required this.value,
     required this.onChanged,
@@ -23,7 +23,7 @@ class GenderDropdownField extends StatelessWidget {
       'Male',
       'Female',
     ],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,67 +39,15 @@ class GenderDropdownField extends StatelessWidget {
         ),
         SizedBox(height: Hightmanager.h8),
         InkWell(
-          onTap: () {
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                  backgroundColor: kPrimaryColor,
-                  title: Text(Textmanager.kSelectGender,
-                      style: TextStyle(color: Colorsmanager.kwhite)),
-                  content: SizedBox(
-                    width: Widthmanager.w200,
-                    height: Hightmanager.h100,
-                    child: ListView.builder(
-                        itemCount: options.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              onChanged(options[index]);
-                              Navigator.pop(context);
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: Paddingmanager.p10),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    options[index],
-                                    style: TextStyle(
-                                        color: Colorsmanager.kwhite,
-                                        fontSize: Fontsizemanager.font20),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }),
-                  )),
-            );
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                    color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
-                    width: Widthmanager.w1),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  value.isEmpty ? Textmanager.kGender : value,
-                  style: TextStyle(
-                    color: value.isEmpty
-                        ? Colorsmanager.kGrey300
-                        : Theme.of(context).primaryColor,
-                  ),
-                ),
-                Icon(Icons.keyboard_arrow_down, color: Colorsmanager.kGrey600),
-              ],
-            ),
-          ),
-        ),
+            onTap: () async {
+              showGenderSelectionDialog(
+                  context: context, options: options, onChanged: onChanged);
+            },
+            child: CustomWidgetForItemCompleteProfile(
+                value: value,
+                isValid: isValid,
+                title: Textmanager.kGender,
+                icon: Icons.keyboard_arrow_down)),
         SizedBox(height: Hightmanager.h16)
       ],
     );

@@ -1,9 +1,10 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
-import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
+import 'package:chat_group/core/widget/showconrty.dart';
+import 'package:chat_group/features/authapp/presentation/view/widgets/custom_for_country_field.dart';
 import 'package:flutter/material.dart';
 
 class CountryField extends StatelessWidget {
@@ -14,13 +15,12 @@ class CountryField extends StatelessWidget {
   final List<Map<String, String>> countries;
 
   const CountryField(
-      {Key? key,
+      {super.key,
       required this.label,
       required this.value,
       required this.onCountrySelected,
       this.isValid = false,
-      this.countries = listCountry})
-      : super(key: key);
+      this.countries = listCountry});
 
   @override
   Widget build(BuildContext context) {
@@ -44,81 +44,21 @@ class CountryField extends StatelessWidget {
         ),
         SizedBox(height: Hightmanager.h8),
         InkWell(
-          onTap: () {
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                  backgroundColor: kPrimaryColor,
-                  title: Text(Textmanager.kSelectCountry,
-                      style: TextStyle(color: Colorsmanager.kwhite)),
-                  content: SizedBox(
-                    width: Widthmanager.w200,
-                    height: Hightmanager.h400,
-                    child: ListView.builder(
-                        itemCount: countries.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              onCountrySelected(countries[index]["name"]!);
-                              Navigator.pop(context);
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: Paddingmanager.p8),
-                              child: Row(
-                                children: [
-                                  Text(countries[index]["flag"]!,
-                                      style: TextStyle(
-                                          fontSize: Fontsizemanager.font20)),
-                                  SizedBox(width: Widthmanager.w10),
-                                  Text(
-                                    countries[index]["name"]!,
-                                    style: TextStyle(
-                                        color: Colorsmanager.kwhite,
-                                        fontSize: Fontsizemanager.font20),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }),
-                  )),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: Paddingmanager.p8),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                    color: isValid ? kPrimaryColor : Colorsmanager.kGrey300,
-                    width: Widthmanager.w1),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    if (selectedFlag.isNotEmpty)
-                      Padding(
-                        padding: EdgeInsets.only(right: Paddingmanager.p8),
-                        child: Text(selectedFlag),
-                      ),
-                    Text(
-                      value.isEmpty ? Textmanager.kSelectCountry : value,
-                      style: TextStyle(
-                        color: value.isEmpty
-                            ? Colorsmanager.kGrey300
-                            : Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-                Icon(Icons.keyboard_arrow_down, color: Colorsmanager.kGrey600),
-              ],
-            ),
-          ),
-        ),
+            onTap: () async {
+              showCountrySelectionDialog(
+                context: context,
+                countries: countries,
+                onCountrySelected: (selectedCountry) {
+                  onCountrySelected(selectedCountry);
+                },
+              );
+            },
+            child: CustomForCountryField(
+                value: value,
+                isValid: isValid,
+                title: Textmanager.kSelectCountry,
+                icon: Icons.keyboard_arrow_down,
+                selectedFlag: selectedFlag)),
         SizedBox(height: Hightmanager.h16),
       ],
     );

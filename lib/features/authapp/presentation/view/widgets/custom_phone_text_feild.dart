@@ -15,7 +15,7 @@ class PhoneNumberField extends StatelessWidget {
   final String countryFlag;
 
   const PhoneNumberField({
-    Key? key,
+    super.key,
     required this.label,
     required this.hintText,
     required this.controller,
@@ -23,7 +23,7 @@ class PhoneNumberField extends StatelessWidget {
     // this.onCountryCodeTap,
     this.countryCode = "+1",
     this.countryFlag = "🇪🇬",
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
