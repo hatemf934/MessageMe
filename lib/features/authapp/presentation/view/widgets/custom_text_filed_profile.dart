@@ -13,11 +13,13 @@ class CustomTextFieldName extends StatelessWidget {
   final Widget? prefixWidget;
   final Widget? suffixWidget;
   final TextInputType keyboardType;
+  final String? Function(String?)? validator;
   const CustomTextFieldName({
     super.key,
     required this.label,
     required this.hintText,
     required this.controller,
+    required this.validator,
     this.isValid = false,
     this.prefixWidget,
     this.suffixWidget,
@@ -37,7 +39,9 @@ class CustomTextFieldName extends StatelessWidget {
           ),
         ),
         SizedBox(height: Hightmanager.h8),
-        TextField(
+        TextFormField(
+          validator: validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller,
           keyboardType: keyboardType,
           decoration: InputDecoration(

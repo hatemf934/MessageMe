@@ -7,8 +7,8 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 class CountryCodePickerCustom extends StatelessWidget {
-  const CountryCodePickerCustom({super.key});
-
+  const CountryCodePickerCustom({super.key, this.onChanged});
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return CountryCodePicker(
@@ -40,6 +40,11 @@ class CountryCodePickerCustom extends StatelessWidget {
           child: Text(Textmanager.kNoCountryFound,
               style: TextStyle(color: Colorsmanager.kwhite)),
         );
+      },
+      onChanged: (countryCode) {
+        if (onChanged != null) {
+          onChanged!(countryCode.dialCode ?? ""); // تمرير الكود المختار
+        }
       },
     );
   }

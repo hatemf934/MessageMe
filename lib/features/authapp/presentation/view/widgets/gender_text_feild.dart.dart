@@ -1,7 +1,9 @@
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
+import 'package:chat_group/core/utils/text_validate_manager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
+import 'package:chat_group/core/widget/message_error_validate.dart';
 import 'package:chat_group/core/widget/showgenderselection.dart';
 import 'package:chat_group/features/authapp/presentation/view/widgets/custom_for_item_complete_profile.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,7 @@ import 'package:flutter/material.dart';
 class GenderDropdownField extends StatelessWidget {
   final String label;
   final String value;
-  final bool isValid;
+  final bool showError;
   final Function(String?) onChanged;
   final List<String> options;
 
@@ -18,7 +20,7 @@ class GenderDropdownField extends StatelessWidget {
     required this.label,
     required this.value,
     required this.onChanged,
-    this.isValid = false,
+    required this.showError,
     this.options = const [
       'Male',
       'Female',
@@ -45,9 +47,12 @@ class GenderDropdownField extends StatelessWidget {
             },
             child: CustomWidgetForItemCompleteProfile(
                 value: value,
-                isValid: isValid,
+                isValid: value.isNotEmpty,
                 title: Textmanager.kGender,
                 icon: Icons.keyboard_arrow_down)),
+        if (showError && value.isEmpty)
+          MessageErrorValidate(
+              errorMessage: TextValidateManager.pleaseSelectGender),
         SizedBox(height: Hightmanager.h16)
       ],
     );
