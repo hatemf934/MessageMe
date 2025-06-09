@@ -9,4 +9,5 @@ class RouteManager {
   static String kAccountview = "accountview";
   static String kPersonalProfile = "personalprofile";
   static String kProfileViewPersonal = "profileviePersonal";
+  static String kChatsHome = 'chats_home';
 }

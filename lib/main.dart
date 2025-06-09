@@ -4,6 +4,7 @@ import 'package:chat_group/features/authapp/data/repo/auth_repo_implement.dart';
 import 'package:chat_group/features/authapp/data/repo/firestore_repo_implement.dart';
 import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
+import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';
 import 'package:chat_group/features/account/presentation/view/account_view.dart';
@@ -66,7 +67,7 @@ class _MessageMeState extends State<MessageMe> {
               debugShowCheckedModeBanner: false,
               initialRoute: FirebaseAuth.instance.currentUser == null
                   ? Homeview.id
-                  : Chatview.id,
+                  : ChatsHome.id,
               routes: {
                 Homeview.id: (context) => const Homeview(),
                 Loginview.id: (context) => const Loginview(),
@@ -77,6 +78,7 @@ class _MessageMeState extends State<MessageMe> {
                 AccountView.id: (context) => const AccountView(),
                 PersonalProfile.id: (context) => const PersonalProfile(),
                 Profileview.id: (context) => const Profileview(),
+                ChatsHome.id: (context) => const ChatsHome(),
               },
               theme: state == Themecubitstate.light
                   ? ThemeModel().lightmode

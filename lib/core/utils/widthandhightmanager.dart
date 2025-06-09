@@ -7,6 +7,7 @@ class Widthmanager {
   static double w20 = 20;
   static double w30 = 30;
   static double w40 = 40;
+  static double w60 = 60;
   static double w70 = 70;
   static double w80 = 80;
   static double w100 = 100;

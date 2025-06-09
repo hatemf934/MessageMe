@@ -6,7 +6,7 @@ import 'package:chat_group/core/utils/textmanager_account.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/general_divider.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/list_of_list_tile.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/profile_list_tile.dart';
-import 'package:chat_group/core/widget/BottomNavigationBarCustom.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/BottomNavigationBarCustom.dart';
 import 'package:flutter/material.dart';
 
 class AccountView extends StatefulWidget {

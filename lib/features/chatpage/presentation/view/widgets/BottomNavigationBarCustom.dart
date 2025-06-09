@@ -5,7 +5,7 @@ import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/textmanager_account.dart';
 import 'package:chat_group/features/account/presentation/view/account_view.dart';
-import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
+import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarCustom extends StatelessWidget {
@@ -26,7 +26,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
             BottomNavigationBarItem(
               icon: IconButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Chatview.id);
+                  Navigator.pushReplacementNamed(context, ChatsHome.id);
                 },
                 icon: Icon(
                   Icons.chat,

@@ -3,8 +3,8 @@ import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
-import 'package:chat_group/core/widget/BottomNavigationBarCustom.dart';
-import 'package:chat_group/core/widget/appbar_chat.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/BottomNavigationBarCustom.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/appbar_chat.dart';
 import 'package:flutter/material.dart';
 
 class Chatview extends StatefulWidget {
@@ -17,7 +17,6 @@ class Chatview extends StatefulWidget {
 
 class _ChatviewState extends State<Chatview> {
   int _selectedIndex = 0;
-  @override
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -31,7 +30,7 @@ class _ChatviewState extends State<Chatview> {
           iconTheme: IconThemeData(
             color: Colorsmanager.kwhite,
           ),
-          title: const AppbarChat(),
+          title: const AppbarTitle(),
           backgroundColor: kPrimaryColor,
         ),
         body: Column(
