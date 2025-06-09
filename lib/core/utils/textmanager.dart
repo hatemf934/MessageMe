@@ -32,4 +32,5 @@ class Textmanager {
   static String ksearchCountry = "Search a country...";
   static String kNoCountryFound = "No country found";
   static String kError = "Error";
+  static String kNoChats = "No Chats Yet";
 }
