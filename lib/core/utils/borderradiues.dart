@@ -4,4 +4,5 @@ class Borderradiues {
   static double bo20 = 20;
   static double bo30 = 30;
   static double bo40 = 40;
+  static double bo48 = 48;
 }

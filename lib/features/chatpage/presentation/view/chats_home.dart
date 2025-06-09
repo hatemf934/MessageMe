@@ -1,5 +1,6 @@
 import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/app_bar_chats.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class ChatsHome extends StatelessWidget {
@@ -9,6 +10,7 @@ class ChatsHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: Appbarchatshome(),
+      floatingActionButton: CustomFloatingActionButton(),
     );
   }
 }
