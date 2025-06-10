@@ -12,8 +12,8 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-          right: Paddingmanager.p15, bottom: Paddingmanager.p23),
+      padding:
+          EdgeInsets.only(right: Paddingmanager.p8, bottom: Paddingmanager.p23),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Borderradiues.bo48),
@@ -37,7 +37,7 @@ class CustomFloatingActionButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(Borderradiues.bo48),
           ),
           child: Icon(
-            Icons.add,
+            Icons.mark_unread_chat_alt,
             color: kSecondryColor,
             size: Fontsizemanager.font30,
           ),
