@@ -6,6 +6,14 @@ class AddingChatView extends StatelessWidget {
   static String id = RouteManager.kAddingChat;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Text(
+            'This is the Add Chat View',
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -3,7 +3,7 @@ import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
-import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
+import 'package:chat_group/features/chatpage/presentation/view/adding_chat_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -31,7 +31,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           splashColor: kPrimaryColor,
           backgroundColor: kPrimaryColor,
           onPressed: () {
-            Navigator.pushNamed(context, Chatview.id);
+            Navigator.pushNamed(context, AddingChatView.id);
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(Borderradiues.bo48),
