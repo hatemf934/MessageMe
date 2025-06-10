@@ -8,3 +8,7 @@ sealed class SearchCubitState extends Equatable {
 }
 
 final class SearchCubitInitial extends SearchCubitState {}
+
+final class SearchAppBar extends SearchCubitState {}
+
+final class SearchTextField extends SearchCubitState {}
