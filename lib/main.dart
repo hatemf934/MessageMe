@@ -4,6 +4,7 @@ import 'package:chat_group/features/authapp/data/repo/auth_repo_implement.dart';
 import 'package:chat_group/features/authapp/data/repo/firestore_repo_implement.dart';
 import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
+import 'package:chat_group/features/chatpage/presentation/view/adding_chat_view.dart';
 import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';
@@ -79,6 +80,7 @@ class _MessageMeState extends State<MessageMe> {
                 PersonalProfile.id: (context) => const PersonalProfile(),
                 Profileview.id: (context) => const Profileview(),
                 ChatsHome.id: (context) => const ChatsHome(),
+                AddingChatView.id: (context) => const AddingChatView(),
               },
               theme: state == Themecubitstate.light
                   ? ThemeModel().lightmode
