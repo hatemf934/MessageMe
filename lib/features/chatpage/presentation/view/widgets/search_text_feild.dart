@@ -3,10 +3,12 @@ import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
+import 'package:chat_group/features/chatpage/presentation/manager/search_cubit/search_cubit_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+class SearchTextFieldContact extends StatelessWidget {
+  const SearchTextFieldContact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class SearchTextField extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: IconButton(
               onPressed: () {
-                Navigator.pop(context);
+                BlocProvider.of<SearchCubitCubit>(context).changesearch(0);
               },
               icon: Icon(
                 Icons.arrow_back,

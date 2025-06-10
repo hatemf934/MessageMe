@@ -55,9 +55,7 @@ class _MessageMeState extends State<MessageMe> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => ThemeCubit(),
-          ),
+          BlocProvider(create: (context) => ThemeCubit()),
           BlocProvider(create: (context) => SignupCubit(AuthRepoImplement())),
           BlocProvider(
               create: (context) => DatausersCubit(FirestoreRepoImplement())),

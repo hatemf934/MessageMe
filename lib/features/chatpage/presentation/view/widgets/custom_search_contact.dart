@@ -1,7 +1,9 @@
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
+import 'package:chat_group/features/chatpage/presentation/manager/search_cubit/search_cubit_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomSearchContact extends StatelessWidget {
   const CustomSearchContact({super.key});
@@ -28,7 +30,7 @@ class CustomSearchContact extends StatelessWidget {
             const Spacer(),
             IconButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  BlocProvider.of<SearchCubitCubit>(context).changesearch(1);
                 },
                 icon: Icon(
                   Icons.search,

@@ -7,7 +7,6 @@ class SearchCubitCubit extends Cubit<SearchCubitState> {
   SearchCubitCubit() : super(SearchCubitInitial());
 
   changesearch(int index) {
-    int index = 0;
     index == 0 ? emit(SearchAppBar()) : emit(SearchTextField());
   }
 }
