@@ -4,7 +4,7 @@ import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
-import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
+import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:chat_group/core/widget/button_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,7 @@ class StartchatView extends StatelessWidget {
             color: kPrimaryColor,
             colortext: kSecondryColor,
             onpressed: () {
-              Navigator.pushReplacementNamed(context, Chatview.id);
+              Navigator.pushReplacementNamed(context, ChatsHome.id);
             },
           ),
           const Spacer(flex: 1),

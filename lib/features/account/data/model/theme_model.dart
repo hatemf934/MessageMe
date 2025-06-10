@@ -12,6 +12,11 @@ class ThemeModel {
         fontSize: Fontsizemanager.font15,
         color: Colorsmanager.kwhite,
       ),
+      titleLarge: TextStyle(
+        fontSize: Fontsizemanager.font20,
+        color: Colorsmanager.kwhite,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
   final lightmode = ThemeData(
@@ -22,6 +27,11 @@ class ThemeModel {
       titleMedium: TextStyle(
         fontSize: Fontsizemanager.font15,
         color: Colorsmanager.kblack,
+      ),
+      titleLarge: TextStyle(
+        fontSize: Fontsizemanager.font20,
+        color: Colorsmanager.kblack,
+        fontWeight: FontWeight.bold,
       ),
     ),
   );

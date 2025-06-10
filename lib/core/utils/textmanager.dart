@@ -33,4 +33,5 @@ class Textmanager {
   static String kNoCountryFound = "No country found";
   static String kError = "Error";
   static String kNoChats = "No Chats Yet";
+  static String kSelectedContant = "Select Contact";
 }
