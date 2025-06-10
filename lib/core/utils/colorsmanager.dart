@@ -12,4 +12,6 @@ class Colorsmanager {
   static Color kGrey300 = Colors.grey[300]!;
   static Color kGrey600 = Colors.grey[600]!;
   static Color kGrey900 = Colors.grey[900]!;
+  static Color kblackscaffold = const Color(0xff0b1014);
+  static Color kFillSearchColor = const Color(0xff23282c);
 }

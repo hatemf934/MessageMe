@@ -6,18 +6,20 @@ class ThemeModel {
   final darkmode = ThemeData(
     useMaterial3: false,
     primaryColor: Colorsmanager.kwhite,
-    scaffoldBackgroundColor: Colorsmanager.kGrey900,
+    scaffoldBackgroundColor: Colorsmanager.kblackscaffold,
     textTheme: TextTheme(
-      titleMedium: TextStyle(
-        fontSize: Fontsizemanager.font15,
-        color: Colorsmanager.kwhite,
-      ),
-      titleLarge: TextStyle(
-        fontSize: Fontsizemanager.font20,
-        color: Colorsmanager.kwhite,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+        titleMedium: TextStyle(
+          fontSize: Fontsizemanager.font15,
+          color: Colorsmanager.kwhite,
+        ),
+        titleLarge: TextStyle(
+          fontSize: Fontsizemanager.font20,
+          color: Colorsmanager.kwhite,
+        ),
+        titleSmall: TextStyle(
+          fontSize: Fontsizemanager.font20,
+          color: Colorsmanager.kGrey600,
+        )),
   );
   final lightmode = ThemeData(
     useMaterial3: false,

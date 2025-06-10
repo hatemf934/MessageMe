@@ -1,6 +1,6 @@
 import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
-import 'package:chat_group/features/chatpage/presentation/view/widgets/custom_search_contact.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/search_text_feild.dart';
 import 'package:flutter/material.dart';
 
 class AddingChatView extends StatelessWidget {
@@ -10,15 +10,18 @@ class AddingChatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Column(
-        children: [
-          const CustomSearchContact(),
-          TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Chatview.id);
-              },
-              child: Text("Add Contact")),
-        ],
+          body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Column(
+          children: [
+            const Center(child: SearchTextField()),
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Chatview.id);
+                },
+                child: Text("Add Contact")),
+          ],
+        ),
       )),
     );
   }
