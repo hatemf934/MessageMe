@@ -19,17 +19,22 @@ class AddingChatView extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
             body: Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: EdgeInsets.only(top: Paddingmanager.p10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BlocBuilder<SearchCubitCubit, SearchCubitState>(
                   builder: (context, state) {
-                if (state is SearchCubitInitial || state is SearchAppBar) {
-                  return const CustomSearchContact();
-                } else {
-                  return const Center(child: SearchTextFieldContact());
-                }
+                return AnimatedCrossFade(
+                    firstCurve: Curves.easeOut,
+                    secondCurve: Curves.easeIn,
+                    firstChild: const Center(child: CustomSearchContact()),
+                    secondChild: const Center(child: SearchTextFieldContact()),
+                    crossFadeState:
+                        state is SearchCubitInitial || state is SearchAppBar
+                            ? CrossFadeState.showFirst
+                            : CrossFadeState.showSecond,
+                    duration: const Duration(milliseconds: 300));
               }),
               Padding(
                 padding: EdgeInsets.only(
