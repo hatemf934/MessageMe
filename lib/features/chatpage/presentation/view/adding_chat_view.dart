@@ -3,6 +3,7 @@ import 'package:chat_group/features/chatpage/presentation/manager/search_cubit/s
 import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/custom_search_contact.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/search_text_feild.dart';
+import 'package:chat_group/features/chatpage/presentation/view/widgets/users_chat_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,6 +28,7 @@ class AddingChatView extends StatelessWidget {
                   return const Center(child: SearchTextFieldContact());
                 }
               }),
+              UsersChatItem(),
               TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, Chatview.id);
