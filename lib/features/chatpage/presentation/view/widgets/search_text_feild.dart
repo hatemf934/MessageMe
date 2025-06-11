@@ -1,6 +1,5 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/borderradiues.dart';
-import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/features/chatpage/presentation/manager/search_cubit/search_cubit_cubit.dart';
@@ -27,7 +26,7 @@ class SearchTextFieldContact extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               )),
           filled: true,
-          fillColor: Colorsmanager.kFillSearchColor,
+          fillColor: Theme.of(context).hoverColor,
           hintText: Textmanager.kSearchName,
           hintStyle: Theme.of(context).textTheme.titleSmall,
           border: OutlineInputBorder(
