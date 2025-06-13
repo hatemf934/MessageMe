@@ -4,6 +4,7 @@ import 'package:chat_group/features/authapp/data/repo/auth_repo_implement.dart';
 import 'package:chat_group/features/authapp/data/repo/firestore_repo_implement.dart';
 import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
+import 'package:chat_group/features/chatpage/presentation/manager/chatshome/chatshome_cubit.dart';
 import 'package:chat_group/features/chatpage/presentation/view/adding_chat_view.dart';
 import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:chat_group/firebase_options.dart';
@@ -56,6 +57,7 @@ class _MessageMeState extends State<MessageMe> {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => ThemeCubit()),
+          BlocProvider(create: (context) => ChatshomeCubit()),
           BlocProvider(create: (context) => SignupCubit(AuthRepoImplement())),
           BlocProvider(
               create: (context) => DatausersCubit(FirestoreRepoImplement())),
