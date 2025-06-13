@@ -1,4 +1,5 @@
 import 'package:chat_group/core/error/failure.dart';
+import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class FirestoreRepo {
@@ -13,5 +14,5 @@ abstract class FirestoreRepo {
     required String email,
   });
 
-  Future<Either<Failure, Map<String, dynamic>>> getUserInfo();
+  Future<Either<Failure, List<DataModel>>> getUserInfo();
 }

@@ -11,12 +11,12 @@ class DataModel {
 
   factory DataModel.fromjson(jsondata) {
     return DataModel(
-        jsondata["id"],
-        jsondata["name"],
-        jsondata["phone"],
-        jsondata["cuontry"],
-        jsondata["image"],
-        jsondata["gender"],
-        jsondata["date"]);
+        jsondata["email"] ?? '',
+        jsondata["name"] ?? '',
+        jsondata["phone"] ?? '',
+        jsondata["cuontry"] ?? '',
+        jsondata["image"] ?? '',
+        jsondata["gender"] ?? '',
+        jsondata["date"] ?? '');
   }
 }

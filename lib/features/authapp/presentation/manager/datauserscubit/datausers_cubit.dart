@@ -1,5 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:chat_group/core/error/failure.dart';
+import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:chat_group/features/authapp/data/repo/firestore_repo.dart';
+import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
 part 'datausers_state.dart';
@@ -24,5 +27,16 @@ class DatausersCubit extends Cubit<DatausersState> {
       email: email,
       date: date,
     );
+  }
+
+  Future<Either<Failure, List<DataModel>>> getUserInfo() async {
+    final result = await firestoreRepo.getUserInfo();
+    result.fold((failure) {
+      emit(DatausersFailure(
+          statusCode: failure.statusCode, errmessage: failure.message));
+    }, (data) {
+      emit(DatausersSucsses(data: data));
+    });
+    return result;
   }
 }

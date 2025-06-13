@@ -9,7 +9,11 @@ sealed class DatausersState extends Equatable {
 
 final class DatausersInitial extends DatausersState {}
 
-final class DatausersSucsses extends DatausersState {}
+final class DatausersSucsses extends DatausersState {
+  final List<DataModel> data;
+
+  const DatausersSucsses({required this.data});
+}
 
 final class DatausersFailure extends DatausersState {
   final String errmessage;

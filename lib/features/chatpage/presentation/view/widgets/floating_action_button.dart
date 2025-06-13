@@ -3,8 +3,10 @@ import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
+import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/chatpage/presentation/view/adding_chat_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -31,6 +33,8 @@ class CustomFloatingActionButton extends StatelessWidget {
           splashColor: kPrimaryColor,
           backgroundColor: kPrimaryColor,
           onPressed: () {
+            BlocProvider.of<DatausersCubit>(context).getUserInfo();
+            // ignore: use_build_context_synchronously
             Navigator.pushNamed(context, AddingChatView.id);
           },
           shape: RoundedRectangleBorder(
