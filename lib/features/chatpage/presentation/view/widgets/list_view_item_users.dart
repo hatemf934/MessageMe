@@ -4,14 +4,9 @@ import 'package:chat_group/features/chatpage/presentation/view/widgets/users_cha
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ListViewItemUsers extends StatefulWidget {
+class ListViewItemUsers extends StatelessWidget {
   const ListViewItemUsers({super.key});
 
-  @override
-  State<ListViewItemUsers> createState() => _ListViewItemUsersState();
-}
-
-class _ListViewItemUsersState extends State<ListViewItemUsers> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DatausersCubit, DatausersState>(
