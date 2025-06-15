@@ -13,6 +13,11 @@ abstract class FirestoreRepo {
     required String date,
     required String email,
   });
+  Future<void> sendUserChat({
+    required String name,
+    required String image,
+  });
 
   Future<Either<Failure, List<DataModel>>> getUserInfo();
+  Future<Either<Failure, List<DataModel>>> getUserChat();
 }

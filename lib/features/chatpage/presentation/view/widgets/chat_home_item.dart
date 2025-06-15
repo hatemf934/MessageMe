@@ -1,14 +1,14 @@
-import 'package:chat_group/core/utils/assets_manager.dart';
 import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
+import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:flutter/material.dart';
 
 class ChatHomeItem extends StatelessWidget {
-  const ChatHomeItem({super.key});
-
+  const ChatHomeItem({super.key, required this.data});
+  final DataModel data;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +25,7 @@ class ChatHomeItem extends StatelessWidget {
               child: Image.asset(
                 height: Hightmanager.h60,
                 width: Widthmanager.w60,
-                AssetsManager.kprofile,
+                data.image,
                 fit: BoxFit.cover,
               )),
           SizedBox(width: Widthmanager.w10),
@@ -33,7 +33,7 @@ class ChatHomeItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Hatem Fathy",
+                data.name,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!

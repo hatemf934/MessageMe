@@ -1,6 +1,7 @@
 import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/textmanager_account.dart';
+import 'package:chat_group/features/splashhome/presentation/view/homeview.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,8 @@ void showLogutDialog(BuildContext context) {
         TextButton(
             onPressed: () async {
               await FirebaseAuth.instance.signOut();
+              // ignore: use_build_context_synchronously
+              Navigator.pushReplacementNamed(context, Homeview.id);
             },
             child: Text(TextmanagerAccount.kLagout,
                 style: TextStyle(color: Colorsmanager.kred))),

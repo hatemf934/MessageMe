@@ -57,7 +57,8 @@ class _MessageMeState extends State<MessageMe> {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => ThemeCubit()),
-          BlocProvider(create: (context) => ChatshomeCubit()),
+          BlocProvider(
+              create: (context) => ChatshomeCubit(FirestoreRepoImplement())),
           BlocProvider(create: (context) => SignupCubit(AuthRepoImplement())),
           BlocProvider(
               create: (context) => DatausersCubit(FirestoreRepoImplement())),

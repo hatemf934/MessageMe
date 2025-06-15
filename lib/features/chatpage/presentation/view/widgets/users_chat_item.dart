@@ -4,17 +4,22 @@ import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
 import 'package:chat_group/features/authapp/data/model/data_model.dart';
-import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
+import 'package:chat_group/features/chatpage/presentation/manager/chatshome/chatshome_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UsersChatItem extends StatelessWidget {
   const UsersChatItem({super.key, required this.data});
   final DataModel data;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushReplacementNamed(context, ChatsHome.id);
+      onTap: () async {
+        await BlocProvider.of<ChatshomeCubit>(context)
+            .sendUserChat(name: data.name, image: data.image);
+        // ignore: use_build_context_synchronously
+        Navigator.pop(context);
       },
       child: Container(
         width: double.infinity,

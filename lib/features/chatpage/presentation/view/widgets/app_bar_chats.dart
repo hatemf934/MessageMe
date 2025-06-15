@@ -13,6 +13,7 @@ class Appbarchatshome extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: const AppbarTitle(),
       backgroundColor: kPrimaryColor,
       toolbarHeight: Hightmanager.h80,

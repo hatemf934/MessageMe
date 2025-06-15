@@ -27,19 +27,67 @@ class FirestoreRepoImplement implements FirestoreRepo {
       'gender': gender,
       'date': date,
       'email': email,
+      "userid": FirebaseAuth.instance.currentUser!.uid,
     });
+  }
+
+  @override
+  Future<void> sendUserChat(
+      {required String name, required String image}) async {
+    CollectionReference userChat =
+        FirebaseFirestore.instance.collection("userchat");
+    String userId = FirebaseAuth.instance.currentUser!.uid;
+    QuerySnapshot existingChat = await userChat
+        .where('userid', isEqualTo: userId)
+        .where('name', isEqualTo: name)
+        .get();
+    if (existingChat.docs.isEmpty) {
+      await userChat.add({
+        'name': name,
+        'image': image,
+        'userid': userId,
+      });
+      await getUserChat();
+    }
   }
 
   @override
   Future<Either<Failure, List<DataModel>>> getUserInfo() async {
     try {
-      CollectionReference infoUsers =
-          FirebaseFirestore.instance.collection("infousers");
-      QuerySnapshot snapshot = await infoUsers.get();
       List<DataModel> data = [];
-      for (var doc in snapshot.docs) {
-        data.add(DataModel.fromjson(doc.data() as Map<String, dynamic>));
-      }
+      final snapshot = await FirebaseFirestore.instance
+          .collection("infousers")
+          .where("userid", isNotEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get();
+
+      data = snapshot.docs.map((doc) {
+        final docData = doc.data();
+        return DataModel.fromjson(docData);
+      }).toList();
+
+      return right(data);
+    } on FirebaseAuthException catch (e) {
+      return Left(FirestoreFailure.fromFirestoreException(e));
+    } catch (e) {
+      return Left(FirestoreFailure(
+          message: 'An unexpected error occurred', statusCode: 500));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<DataModel>>> getUserChat() async {
+    try {
+      List<DataModel> data = [];
+      final snapshot = await FirebaseFirestore.instance
+          .collection("userchat")
+          .where("userid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get();
+
+      data = snapshot.docs.map((doc) {
+        final docData = doc.data();
+        return DataModel.fromjson(docData);
+      }).toList();
+
       return right(data);
     } on FirebaseAuthException catch (e) {
       return Left(FirestoreFailure.fromFirestoreException(e));
