@@ -8,8 +8,9 @@ import 'package:chat_group/features/chatpage/presentation/view/widgets/positione
 import 'package:flutter/material.dart';
 
 class ChatHomeItem extends StatefulWidget {
-  const ChatHomeItem({super.key, required this.data});
+  const ChatHomeItem({super.key, required this.data, required this.onPressed});
   final DataModel data;
+  final void Function() onPressed;
 
   @override
   State<ChatHomeItem> createState() => _ChatHomeItemState();
@@ -115,6 +116,7 @@ class _ChatHomeItemState extends State<ChatHomeItem>
           ),
           PositionedDelete(
             deleteIconAnimation: deleteIconAnimation,
+            onPressed: widget.onPressed,
           ),
         ],
       ),
