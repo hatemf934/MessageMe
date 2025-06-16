@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 
 class PositionedDelete extends StatelessWidget {
   const PositionedDelete(
-      {super.key, required this.deleteIconAnimation, required this.onPressed});
+      {super.key,
+      required this.deleteIconAnimation,
+      required this.onPressed,
+      required this.onPressedDeleted});
   final Animation<double> deleteIconAnimation;
   final void Function() onPressed;
+  final void Function() onPressedDeleted;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -21,7 +25,10 @@ class PositionedDelete extends StatelessWidget {
               scale: deleteIconAnimation.value,
               child: IconButton(
                 icon: Icon(Icons.delete, color: Colorsmanager.kred),
-                onPressed: onPressed,
+                onPressed: () {
+                  onPressedDeleted();
+                  onPressed();
+                },
               ),
             ),
           );

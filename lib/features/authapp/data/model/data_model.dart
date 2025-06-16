@@ -10,7 +10,7 @@ class DataModel {
   DataModel(this.id, this.name, this.phone, this.country, this.image,
       this.gender, this.date, this.userId);
 
-  factory DataModel.fromjson(jsondata) {
+  factory DataModel.fromjson(jsondata, String documentId) {
     return DataModel(
         jsondata["email"] ?? '',
         jsondata["name"] ?? '',
@@ -19,6 +19,6 @@ class DataModel {
         jsondata["image"] ?? '',
         jsondata["gender"] ?? '',
         jsondata["date"] ?? '',
-        jsondata["userId"] ?? '');
+        documentId);
   }
 }

@@ -62,7 +62,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
 
       data = snapshot.docs.map((doc) {
         final docData = doc.data();
-        return DataModel.fromjson(docData);
+        return DataModel.fromjson(docData, doc.id);
       }).toList();
 
       return right(data);
@@ -85,7 +85,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
 
       data = snapshot.docs.map((doc) {
         final docData = doc.data();
-        return DataModel.fromjson(docData);
+        return DataModel.fromjson(docData, doc.id);
       }).toList();
 
       return right(data);

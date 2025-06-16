@@ -8,7 +8,11 @@ import 'package:chat_group/features/chatpage/presentation/view/widgets/positione
 import 'package:flutter/material.dart';
 
 class ChatHomeItem extends StatefulWidget {
-  const ChatHomeItem({super.key, required this.data, required this.onPressed});
+  const ChatHomeItem({
+    super.key,
+    required this.data,
+    required this.onPressed,
+  });
   final DataModel data;
   final void Function() onPressed;
 
@@ -28,7 +32,6 @@ class _ChatHomeItemState extends State<ChatHomeItem>
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
-
     slidingAnimation = Tween<Offset>(
       begin: const Offset(0, 0),
       end: const Offset(0.16, 0),
@@ -117,6 +120,7 @@ class _ChatHomeItemState extends State<ChatHomeItem>
           PositionedDelete(
             deleteIconAnimation: deleteIconAnimation,
             onPressed: widget.onPressed,
+            onPressedDeleted: animationController.reverse,
           ),
         ],
       ),
