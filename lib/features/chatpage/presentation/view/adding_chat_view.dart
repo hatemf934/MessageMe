@@ -1,8 +1,8 @@
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/routemanger.dart';
+import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/features/chatpage/presentation/manager/search_cubit/search_cubit_cubit.dart';
-import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/custom_search_contact.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/list_view_item_users.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/search_text_feild.dart';
@@ -41,18 +41,13 @@ class AddingChatView extends StatelessWidget {
                     right: Paddingmanager.p15,
                     left: Paddingmanager.p15,
                     top: Paddingmanager.p15),
-                child: Text("Contacts on MessageMe",
+                child: Text(Textmanager.kContactOn,
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
                         .copyWith(fontSize: Fontsizemanager.font15)),
               ),
               const Expanded(child: ListViewItemUsers()),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, Chatview.id);
-                  },
-                  child: Text("Add Contact")),
             ],
           ),
         )),

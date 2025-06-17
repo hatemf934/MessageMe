@@ -24,18 +24,20 @@ class _ChatsHomeState extends State<ChatsHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<ChatshomeCubit, ChatshomeState>(
-          builder: (context, state) {
-        if (state is ChatshomeChatCome) {
-          final usersData = state.data;
-          return ChatHomeItemList(usersData: usersData);
-        } else {
-          return const NoChats();
-        }
-      }),
-      appBar: Appbarchatshome(),
-      floatingActionButton: CustomFloatingActionButton(),
+    return SafeArea(
+      child: Scaffold(
+        body: BlocBuilder<ChatshomeCubit, ChatshomeState>(
+            builder: (context, state) {
+          if (state is ChatshomeChatCome) {
+            final usersData = state.data;
+            return ChatHomeItemList(usersData: usersData);
+          } else {
+            return const NoChats();
+          }
+        }),
+        appBar: const Appbarchatshome(),
+        floatingActionButton: const CustomFloatingActionButton(),
+      ),
     );
   }
 }

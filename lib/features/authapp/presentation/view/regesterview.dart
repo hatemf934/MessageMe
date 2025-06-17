@@ -5,6 +5,7 @@ import 'package:chat_group/core/utils/routemanger.dart';
 import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
 import 'package:chat_group/core/widget/custom_aswesome_dialog.dart';
+import 'package:chat_group/features/authapp/data/repo/auth_service.dart';
 import 'package:chat_group/features/authapp/presentation/manager/signupcubit/signup_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/view/complete_profile.dart';
 import 'package:chat_group/core/widget/button_custom.dart';
@@ -39,49 +40,53 @@ class Regesterview extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is SignupLoading,
-          child: Scaffold(
-            body: Padding(
-              padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
-              child: Form(
-                key: formkey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: Hightmanager.h60),
-                    Image.asset(AssetsManager.klogo, height: 200),
-                    SizedBox(height: Hightmanager.h20),
-                    CustomTextFieldValidate(
-                      onEmailChanged: (value) => email = value,
-                      onPasswordChanged: (value) => password = value,
-                    ),
-                    SizedBox(height: Hightmanager.h20),
-                    const SectionAlreadyHaveAccount(),
-                    const OrDivider(),
-                    SizedBox(height: Hightmanager.h20),
-                    const CustomGoogleButoon(),
-                    SizedBox(height: Hightmanager.h20),
-                    ButtonCustom(
-                      colortext: kSecondryColor,
-                      color: kPrimaryColor,
-                      onpressed: () async {
-                        if (formkey.currentState!.validate()) {
-                          if (email!.isNotEmpty && password!.isNotEmpty) {
-                            context
-                                .read<SignupCubit>()
-                                .signUpWithEmailAndPassword(
-                                  email: email!,
-                                  password: password!,
-                                );
+        return SafeArea(
+          child: ModalProgressHUD(
+            inAsyncCall: state is SignupLoading,
+            child: Scaffold(
+              body: Padding(
+                padding: EdgeInsets.symmetric(horizontal: Paddingmanager.p20),
+                child: Form(
+                  key: formkey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: Hightmanager.h60),
+                      Image.asset(AssetsManager.klogo, height: 200),
+                      SizedBox(height: Hightmanager.h20),
+                      CustomTextFieldValidate(
+                        onEmailChanged: (value) => email = value,
+                        onPasswordChanged: (value) => password = value,
+                      ),
+                      SizedBox(height: Hightmanager.h20),
+                      const SectionAlreadyHaveAccount(),
+                      const OrDivider(),
+                      SizedBox(height: Hightmanager.h20),
+                      const CustomGoogleButoon(),
+                      SizedBox(height: Hightmanager.h20),
+                      ButtonCustom(
+                        colortext: kSecondryColor,
+                        color: kPrimaryColor,
+                        onpressed: () async {
+                          if (formkey.currentState!.validate()) {
+                            if (email!.isNotEmpty && password!.isNotEmpty) {
+                              AuthSevices()
+                                  .regester(context, email!, password!);
+                              // context
+                              //     .read<SignupCubit>()
+                              //     .signUpWithEmailAndPassword(
+                              //       email: email!,
+                              //       password: password!,
+                              //     );
+                            }
                           }
-                        }
-                      },
-                      textbuttom: Textmanager.kcontinue,
-                    ),
-                    SizedBox(height: Hightmanager.h70),
-                  ],
+                        },
+                        textbuttom: Textmanager.kcontinue,
+                      ),
+                      SizedBox(height: Hightmanager.h70),
+                    ],
+                  ),
                 ),
               ),
             ),

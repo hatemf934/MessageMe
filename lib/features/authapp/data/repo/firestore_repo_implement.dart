@@ -1,5 +1,7 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/error/failure.dart';
 import 'package:chat_group/core/error/firestore_failure.dart';
+import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:chat_group/features/authapp/data/repo/firestore_repo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,7 +19,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
       required String email,
       required String date}) async {
     CollectionReference infoUsers =
-        FirebaseFirestore.instance.collection("infousers");
+        FirebaseFirestore.instance.collection(kuserinfo);
 
     await infoUsers.add({
       'name': name,
@@ -35,7 +37,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
   Future<void> sendUserChat(
       {required String name, required String image}) async {
     CollectionReference userChat =
-        FirebaseFirestore.instance.collection("userchat");
+        FirebaseFirestore.instance.collection(kuserchat);
     String userId = FirebaseAuth.instance.currentUser!.uid;
     QuerySnapshot existingChat = await userChat
         .where('userid', isEqualTo: userId)
@@ -56,7 +58,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
     try {
       List<DataModel> data = [];
       final snapshot = await FirebaseFirestore.instance
-          .collection("infousers")
+          .collection(kuserinfo)
           .where("userid", isNotEqualTo: FirebaseAuth.instance.currentUser!.uid)
           .get();
 
@@ -70,7 +72,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
       return Left(FirestoreFailure.fromFirestoreException(e));
     } catch (e) {
       return Left(FirestoreFailure(
-          message: 'An unexpected error occurred', statusCode: 500));
+          message: Textmanager.kAnErrorOccurred, statusCode: 500));
     }
   }
 
@@ -79,7 +81,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
     try {
       List<DataModel> data = [];
       final snapshot = await FirebaseFirestore.instance
-          .collection("userchat")
+          .collection(kuserchat)
           .where("userid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
           .get();
 
@@ -93,7 +95,7 @@ class FirestoreRepoImplement implements FirestoreRepo {
       return Left(FirestoreFailure.fromFirestoreException(e));
     } catch (e) {
       return Left(FirestoreFailure(
-          message: 'An unexpected error occurred', statusCode: 500));
+          message: Textmanager.kAnErrorOccurred, statusCode: 500));
     }
   }
 }

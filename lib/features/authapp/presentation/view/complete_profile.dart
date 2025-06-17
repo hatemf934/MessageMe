@@ -35,32 +35,34 @@ class _CompleteProfileState extends State<CompleteProfile> {
   @override
   Widget build(BuildContext context) {
     String email = ModalRoute.of(context)!.settings.arguments as String;
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(Paddingmanager.p20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.arrow_back,
-                color: Theme.of(context).primaryColor,
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.all(Paddingmanager.p20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
-            ),
-            Center(
-              child: ProfilePictureWithEditIcon(
-                onEditPressed: _onEditPressed,
-                size: Fontsizemanager.font150,
-                imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
+              Center(
+                child: ProfilePictureWithEditIcon(
+                  onEditPressed: _onEditPressed,
+                  size: Fontsizemanager.font150,
+                  imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
+                ),
               ),
-            ),
-            CustomCompleteProfile(email: email, selectedImage: selectedImage),
-          ],
+              CustomCompleteProfile(email: email, selectedImage: selectedImage),
+            ],
+          ),
         ),
       ),
     );

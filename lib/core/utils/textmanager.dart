@@ -35,4 +35,6 @@ class Textmanager {
   static String kNoChats = "No Chats Yet";
   static String kSelectedContant = "Select Contact";
   static String kSearchName = "Search name..";
+  static String kContactOn = "Contacts on MessageMe";
+  static String kAnErrorOccurred = 'An unexpected error occurred';
 }

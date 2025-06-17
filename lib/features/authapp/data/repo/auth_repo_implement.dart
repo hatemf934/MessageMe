@@ -1,4 +1,5 @@
 import 'package:chat_group/core/error/failure.dart';
+import 'package:chat_group/core/utils/textmanager.dart';
 import 'package:chat_group/features/authapp/data/repo/auth_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,8 +18,8 @@ class AuthRepoImplement implements AuthRepo {
     } on FirebaseAuthException catch (e) {
       return Left(AuthFailure.fromFirebaseAuthException(e));
     } catch (e) {
-      return Left(AuthFailure(
-          message: 'An unexpected error occurred', statusCode: 500));
+      return Left(
+          AuthFailure(message: Textmanager.kAnErrorOccurred, statusCode: 500));
     }
   }
 

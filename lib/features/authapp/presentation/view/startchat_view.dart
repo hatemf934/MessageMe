@@ -13,41 +13,43 @@ class StartchatView extends StatelessWidget {
   static String id = RouteManager.kStartchat;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: Hightmanager.h50),
-          Row(
-            children: [
-              SizedBox(width: Widthmanager.w30),
-              Image.asset(
-                AssetsManager.klogo,
-                height: Hightmanager.h30,
-              ),
-            ],
-          ),
-          const Spacer(flex: 1),
-          Image.asset(AssetsManager.klogo),
-          SizedBox(height: Hightmanager.h50),
-          Text(
-            kTitle,
-            style: TextStyle(
-                fontSize: Fontsizemanager.font30,
-                color: kPrimaryColor,
-                fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: Hightmanager.h50),
-          ButtonCustom(
-            height: Hightmanager.h60,
-            textbuttom: Textmanager.kStartchat,
-            color: kPrimaryColor,
-            colortext: kSecondryColor,
-            onpressed: () {
-              Navigator.pushReplacementNamed(context, ChatsHome.id);
-            },
-          ),
-          const Spacer(flex: 1),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            SizedBox(height: Hightmanager.h50),
+            Row(
+              children: [
+                SizedBox(width: Widthmanager.w30),
+                Image.asset(
+                  AssetsManager.klogo,
+                  height: Hightmanager.h30,
+                ),
+              ],
+            ),
+            const Spacer(flex: 1),
+            Image.asset(AssetsManager.klogo),
+            SizedBox(height: Hightmanager.h50),
+            Text(
+              kTitle,
+              style: TextStyle(
+                  fontSize: Fontsizemanager.font30,
+                  color: kPrimaryColor,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: Hightmanager.h50),
+            ButtonCustom(
+              height: Hightmanager.h60,
+              textbuttom: Textmanager.kStartchat,
+              color: kPrimaryColor,
+              colortext: kSecondryColor,
+              onpressed: () {
+                Navigator.pushReplacementNamed(context, ChatsHome.id);
+              },
+            ),
+            const Spacer(flex: 1),
+          ],
+        ),
       ),
     );
   }

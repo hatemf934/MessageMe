@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/chat_home_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,7 +14,7 @@ class ChatHomeItemList extends StatefulWidget {
 class _ChatHomeItemListState extends State<ChatHomeItemList> {
   Future<void> deleteChat(String documentId) async {
     await FirebaseFirestore.instance
-        .collection("userchat")
+        .collection(kuserchat)
         .doc(documentId)
         .delete();
   }
