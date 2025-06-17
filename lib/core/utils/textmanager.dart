@@ -33,6 +33,8 @@ class Textmanager {
   static String kNoCountryFound = "No country found";
   static String kError = "Error";
   static String kNoChats = "No Chats Yet";
+  static String kTrySearch = "Try searching with a different keyword";
+  static String kNoResults = 'No results found';
   static String kSelectedContant = "Select Contact";
   static String kSearchName = "Search name..";
   static String kContactOn = "Contacts on MessageMe";

@@ -36,16 +36,23 @@ class AddingChatView extends StatelessWidget {
                             : CrossFadeState.showSecond,
                     duration: const Duration(milliseconds: 300));
               }),
-              Padding(
-                padding: EdgeInsets.only(
-                    right: Paddingmanager.p15,
-                    left: Paddingmanager.p15,
-                    top: Paddingmanager.p15),
-                child: Text(Textmanager.kContactOn,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall!
-                        .copyWith(fontSize: Fontsizemanager.font15)),
+              BlocBuilder<SearchCubitCubit, SearchCubitState>(
+                builder: (context, state) {
+                  if (state is SearchResults) {
+                    return const SizedBox.shrink();
+                  }
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        right: Paddingmanager.p15,
+                        left: Paddingmanager.p15,
+                        top: Paddingmanager.p15),
+                    child: Text(Textmanager.kContactOn,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontSize: Fontsizemanager.font15)),
+                  );
+                },
               ),
               const Expanded(child: ListViewItemUsers()),
             ],

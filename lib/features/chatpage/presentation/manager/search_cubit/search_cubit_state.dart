@@ -12,3 +12,9 @@ final class SearchCubitInitial extends SearchCubitState {}
 final class SearchAppBar extends SearchCubitState {}
 
 final class SearchTextField extends SearchCubitState {}
+
+class SearchResults extends SearchCubitState {
+  final String searchQuery;
+
+  const SearchResults({required this.searchQuery});
+}
