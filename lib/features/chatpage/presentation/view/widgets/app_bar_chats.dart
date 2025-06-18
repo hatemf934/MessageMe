@@ -3,6 +3,7 @@ import 'package:chat_group/core/utils/colorsmanager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/widthandhightmanager.dart';
 import 'package:chat_group/core/widget/showlogoutdialog.dart';
+import 'package:chat_group/features/account/presentation/view/profile_view.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/appbar_chat.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,13 @@ class Appbarchatshome extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: IconButton(
+        icon: Icon(Icons.account_circle,
+            size: Fontsizemanager.font30, color: Colorsmanager.kwhite),
+        onPressed: () {
+          Navigator.pushNamed(context, Profileview.id);
+        },
+      ),
       automaticallyImplyLeading: false,
       title: const AppbarTitle(),
       backgroundColor: kPrimaryColor,
