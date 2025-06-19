@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/widget/custom_aswesome_dialog.dart';
 import 'package:chat_group/features/authapp/data/model/data_model.dart';
 import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
@@ -54,7 +55,9 @@ class ListViewItemUsers extends StatelessWidget {
 
             // Loading state
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: kPrimaryColor,
+              ),
             );
           },
         );

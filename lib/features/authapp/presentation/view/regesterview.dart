@@ -73,12 +73,6 @@ class Regesterview extends StatelessWidget {
                             if (email!.isNotEmpty && password!.isNotEmpty) {
                               AuthSevices()
                                   .regester(context, email!, password!);
-                              // context
-                              //     .read<SignupCubit>()
-                              //     .signUpWithEmailAndPassword(
-                              //       email: email!,
-                              //       password: password!,
-                              //     );
                             }
                           }
                         },
