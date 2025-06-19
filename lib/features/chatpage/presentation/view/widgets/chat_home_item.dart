@@ -66,7 +66,7 @@ class _ChatHomeItemState extends State<ChatHomeItem>
         if (animationController.isCompleted) {
           animationController.reverse();
         } else {
-          Navigator.pushNamed(context, Chatview.id);
+          Navigator.pushNamed(context, Chatview.id, arguments: widget.data);
         }
       },
       child: Stack(
