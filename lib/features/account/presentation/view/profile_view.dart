@@ -1,4 +1,3 @@
-import 'package:chat_group/core/utils/assets_manager.dart';
 import 'package:chat_group/core/utils/fontsizemanager.dart';
 import 'package:chat_group/core/utils/paddingmanager.dart';
 import 'package:chat_group/core/utils/routemanger.dart';
@@ -7,8 +6,10 @@ import 'package:chat_group/core/utils/widthandhightmanager.dart';
 import 'package:chat_group/core/widget/showmodel.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/list_tile_profile.dart';
 import 'package:chat_group/features/account/presentation/view/widgets/row_app_bar_profile.dart';
+import 'package:chat_group/features/authapp/presentation/manager/datauserscubit/datausers_cubit.dart';
 import 'package:chat_group/features/authapp/presentation/view/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Profileview extends StatefulWidget {
@@ -38,53 +39,59 @@ class _ProfileviewState extends State<Profileview> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(Paddingmanager.p15),
-        child: Column(
-          children: [
-            SizedBox(height: Hightmanager.h20),
-            const RowAppBarProfile(),
-            SizedBox(height: Hightmanager.h30),
-            ProfilePictureWithEditIcon(
-              size: Fontsizemanager.font150,
-              imageAsset: selectedImage?.path ?? AssetsManager.kprofile,
-              onEditPressed: _onEditPressed,
+    return BlocBuilder<DatausersCubit, DatausersState>(
+      builder: (context, state) {
+        if (state is DatausersSucsses) {
+          final dataModel = state.data[0];
+          return Scaffold(
+            body: Padding(
+              padding: EdgeInsets.all(Paddingmanager.p15),
+              child: Column(children: [
+                SizedBox(height: Hightmanager.h20),
+                const RowAppBarProfile(),
+                SizedBox(height: Hightmanager.h30),
+                ProfilePictureWithEditIcon(
+                  size: Fontsizemanager.font150,
+                  imageAsset: selectedImage?.path ?? dataModel.image,
+                  onEditPressed: _onEditPressed,
+                ),
+                SizedBox(height: Hightmanager.h30),
+                ListTileProfile(
+                  iconDataLeading: Icons.person,
+                  title: Textmanager.kName,
+                  subtitle: dataModel.name,
+                ),
+                ListTileProfile(
+                  iconDataLeading: Icons.phone,
+                  title: Textmanager.kPhone,
+                  subtitle: dataModel.phone,
+                ),
+                ListTileProfile(
+                  iconDataLeading: Icons.email,
+                  title: Textmanager.kEmail,
+                  subtitle: dataModel.id,
+                ),
+                ListTileProfile(
+                  iconDataLeading: Icons.public,
+                  title: Textmanager.kCountry,
+                  subtitle: dataModel.country,
+                ),
+                ListTileProfile(
+                  iconDataLeading: Icons.calendar_month,
+                  title: Textmanager.kDateOfBrith,
+                  subtitle: dataModel.date,
+                ),
+                ListTileProfile(
+                  iconDataLeading: Icons.face,
+                  title: Textmanager.kGender,
+                  subtitle: dataModel.gender,
+                ),
+              ]),
             ),
-            SizedBox(height: Hightmanager.h30),
-            ListTileProfile(
-              iconDataLeading: Icons.person,
-              title: Textmanager.kName,
-              subtitle: "hatem fathy",
-            ),
-            ListTileProfile(
-              iconDataLeading: Icons.phone,
-              title: Textmanager.kPhone,
-              subtitle: "0106064296",
-            ),
-            ListTileProfile(
-              iconDataLeading: Icons.email,
-              title: Textmanager.kEmail,
-              subtitle: "hatemf934@gmail.com",
-            ),
-            ListTileProfile(
-              iconDataLeading: Icons.public,
-              title: Textmanager.kCountry,
-              subtitle: "Egypt",
-            ),
-            ListTileProfile(
-              iconDataLeading: Icons.calendar_month,
-              title: Textmanager.kDateOfBrith,
-              subtitle: "25/5/2004",
-            ),
-            ListTileProfile(
-              iconDataLeading: Icons.face,
-              title: Textmanager.kGender,
-              subtitle: "male",
-            ),
-          ],
-        ),
-      ),
+          );
+        }
+        return const Center(child: CircularProgressIndicator());
+      },
     );
   }
 }

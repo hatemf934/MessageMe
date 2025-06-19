@@ -39,4 +39,15 @@ class DatausersCubit extends Cubit<DatausersState> {
     });
     return result;
   }
+
+  Future<Either<Failure, List<DataModel>>> getUserProfile() async {
+    final result = await firestoreRepo.getUserProfile();
+    result.fold((failure) {
+      emit(DatausersFailure(
+          statusCode: failure.statusCode, errmessage: failure.message));
+    }, (data) {
+      emit(DatausersSucsses(data: data));
+    });
+    return result;
+  }
 }

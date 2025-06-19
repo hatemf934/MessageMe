@@ -19,5 +19,6 @@ abstract class FirestoreRepo {
   });
 
   Future<Either<Failure, List<DataModel>>> getUserInfo();
+  Future<Either<Failure, List<DataModel>>> getUserProfile();
   Future<Either<Failure, List<DataModel>>> getUserChat();
 }

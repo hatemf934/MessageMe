@@ -77,6 +77,29 @@ class FirestoreRepoImplement implements FirestoreRepo {
   }
 
   @override
+  Future<Either<Failure, List<DataModel>>> getUserProfile() async {
+    try {
+      List<DataModel> data = [];
+      final snapshot = await FirebaseFirestore.instance
+          .collection(kuserinfo)
+          .where("userid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get();
+
+      data = snapshot.docs.map((doc) {
+        final docData = doc.data();
+        return DataModel.fromjson(docData, doc.id);
+      }).toList();
+
+      return right(data);
+    } on FirebaseAuthException catch (e) {
+      return Left(FirestoreFailure.fromFirestoreException(e));
+    } catch (e) {
+      return Left(FirestoreFailure(
+          message: Textmanager.kAnErrorOccurred, statusCode: 500));
+    }
+  }
+
+  @override
   Future<Either<Failure, List<DataModel>>> getUserChat() async {
     try {
       List<DataModel> data = [];
