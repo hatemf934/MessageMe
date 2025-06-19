@@ -9,12 +9,10 @@ import 'package:chat_group/features/chatpage/presentation/view/adding_chat_view.
 import 'package:chat_group/features/chatpage/presentation/view/chats_home.dart';
 import 'package:chat_group/firebase_options.dart';
 import 'package:chat_group/features/account/data/model/theme_model.dart';
-import 'package:chat_group/features/account/presentation/view/account_view.dart';
 import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
 import 'package:chat_group/features/authapp/presentation/view/complete_profile.dart';
 import 'package:chat_group/features/splashhome/presentation/view/homeview.dart';
 import 'package:chat_group/features/authapp/presentation/view/loginview.dart';
-import 'package:chat_group/features/account/presentation/view/personal_profile.dart';
 import 'package:chat_group/features/account/presentation/view/profile_view.dart';
 import 'package:chat_group/features/authapp/presentation/view/regesterview.dart';
 import 'package:chat_group/features/authapp/presentation/view/startchat_view.dart';
@@ -77,8 +75,6 @@ class _MessageMeState extends State<MessageMe> {
                 Chatview.id: (context) => const Chatview(),
                 CompleteProfile.id: (context) => const CompleteProfile(),
                 StartchatView.id: (context) => const StartchatView(),
-                AccountView.id: (context) => const AccountView(),
-                PersonalProfile.id: (context) => const PersonalProfile(),
                 Profileview.id: (context) => const Profileview(),
                 ChatsHome.id: (context) => const ChatsHome(),
                 AddingChatView.id: (context) => const AddingChatView(),

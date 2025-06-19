@@ -1,3 +1,4 @@
+import 'package:chat_group/constant.dart';
 import 'package:chat_group/core/utils/assets_manager.dart';
 import 'package:chat_group/core/utils/borderradiues.dart';
 import 'package:chat_group/core/utils/colorsmanager.dart';
@@ -9,40 +10,28 @@ class CustomGoogleButoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-          width: Widthmanager.w100,
-          height: Hightmanager.h50,
-          decoration: BoxDecoration(
-            border: Border.all(
-                color: Colorsmanager.kborder, width: Widthmanager.w2),
-            borderRadius: BorderRadius.circular(Borderradiues.bo20),
-          ),
-          child: Center(
-              child: SizedBox(
-                  height: Hightmanager.h30,
-                  width: Widthmanager.w30,
-                  child: Image.asset(AssetsManager.kgooglelogo))),
+    return Container(
+      width: double.infinity,
+      height: Hightmanager.h50,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            kPrimaryColor,
+            kSecondryColor,
+            // kPrimaryColor,
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
         ),
-        Container(
-          width: Widthmanager.w100,
-          height: Hightmanager.h50,
-          decoration: BoxDecoration(
-            border: Border.all(
-                color: Colorsmanager.kborder, width: Widthmanager.w2),
-            borderRadius: BorderRadius.circular(Borderradiues.bo20),
-          ),
-          child: Center(
-            child: SizedBox(
-              height: Hightmanager.h25,
+        border:
+            Border.all(color: Colorsmanager.kborder, width: Widthmanager.w2),
+        borderRadius: BorderRadius.circular(Borderradiues.bo30),
+      ),
+      child: Center(
+          child: SizedBox(
+              height: Hightmanager.h30,
               width: Widthmanager.w30,
-              child: Image.asset(AssetsManager.kfacelogo),
-            ),
-          ),
-        ),
-      ],
+              child: Image.asset(AssetsManager.kgooglelogo))),
     );
   }
 }

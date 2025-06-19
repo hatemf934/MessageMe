@@ -12,7 +12,6 @@ class Textmanager {
   static String kNotHaveAccount = "Don't have an account?";
   static String kSendMessage = "Write your Message here";
   static String kProfilephoto = "Profile photo";
-  static String kPersonalProfile = "Personal Profile";
   static String kProfile = "Profile";
   static String kCamera = 'Camera';
   static String kGallery = 'Gallery';
@@ -20,7 +19,6 @@ class Textmanager {
   static String kSelectCountry = "Select Country";
   static String kSelectGender = "Select Gender";
   static String kGender = "Gender";
-  static String kChat = "Chat";
   static String kFullName = "Full Name";
   static String kPhoneNumber = "Phone Number";
   static String k000000000 = "000 000 000";
@@ -39,4 +37,7 @@ class Textmanager {
   static String kSearchName = "Search name..";
   static String kContactOn = "Contacts on MessageMe";
   static String kAnErrorOccurred = 'An unexpected error occurred';
+  static String kCancel = "Cancel";
+  static String kLagout = "Logout";
+  static String kAreyousure = "Are you sure you want to logout?";
 }

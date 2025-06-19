@@ -26,6 +26,7 @@ class Appbarchatshome extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: kPrimaryColor,
       toolbarHeight: Hightmanager.h80,
       actions: [
+        SizedBox(width: Widthmanager.w40),
         IconButton(
           icon: Icon(Icons.logout,
               size: Fontsizemanager.font30, color: Colorsmanager.kwhite),

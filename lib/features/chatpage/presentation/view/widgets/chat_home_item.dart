@@ -1,4 +1,5 @@
 import 'package:chat_group/features/authapp/data/model/data_model.dart';
+import 'package:chat_group/features/chatpage/presentation/view/chatview.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/positioned_deleted.dart';
 import 'package:chat_group/features/chatpage/presentation/view/widgets/sliding_transtion.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,13 @@ class _ChatHomeItemState extends State<ChatHomeItem>
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () => animationController.forward(),
-      onTap: () => animationController.reverse(),
+      onTap: () {
+        if (animationController.isCompleted) {
+          animationController.reverse();
+        } else {
+          Navigator.pushNamed(context, Chatview.id);
+        }
+      },
       child: Stack(
         children: [
           SlidingTranstion(
